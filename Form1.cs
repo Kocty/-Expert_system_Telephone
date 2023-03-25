@@ -17,9 +17,11 @@ namespace Курсовой_проект
             InitializeComponent();
             form2 = new Test();
             form3 = new Settings();
+            form4 = new Admin();
         }
         Test form2;
         Settings form3;
+        Admin form4;
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -32,7 +34,7 @@ namespace Курсовой_проект
 
         private void button2_Click(object sender, EventArgs e)
         {
-            form3.Show();
+            form4.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -41,6 +43,11 @@ namespace Курсовой_проект
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
