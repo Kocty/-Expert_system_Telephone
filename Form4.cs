@@ -28,6 +28,7 @@ namespace Курсовой_проект
             if (Log==Login && Pas==Password)
             {
                 form3.Show();
+                Hide();
             }
             else
             {
