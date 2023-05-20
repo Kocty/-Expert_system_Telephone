@@ -29,6 +29,8 @@ namespace Курсовой_проект
             {
                 form3.Show();
                 Hide();
+                textBox1.Text = "";
+                textBox2.Text = "";
             }
             else
             {

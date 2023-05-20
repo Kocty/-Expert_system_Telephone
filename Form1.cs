@@ -12,6 +12,7 @@ namespace Курсовой_проект
 {
     public partial class Menu : Form
     {
+        /* инициализация и подключение форм к главной форме*/
         public Menu()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace Курсовой_проект
         private void button1_Click(object sender, EventArgs e)
         {
             form2.Show();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
