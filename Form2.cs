@@ -132,7 +132,7 @@ namespace Курсовой_проект
                     }
 
                 }
-                else if (radioButton3.Checked == true)//от 3 до 5 млн цена
+                else if (radioButton3.Checked == true)//от 3 до 5 млн цена Toyota BMW Ford Kia Lada
                 {
                     switch (n)
                     {
@@ -266,9 +266,12 @@ namespace Курсовой_проект
                 if (e.RowIndex >= 0)
                 {
                     textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    
                     textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    textBox3.Text = textBox3.Text + " ₽";// добавляем в конце строки знак рубля(правый alt + 8)
                     textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    textBox4.Text = textBox4.Text + " ₽";
                 }
 
             }
