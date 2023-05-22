@@ -30,19 +30,25 @@ namespace Курсовой_проект
 
         private void button1_Click(object sender, EventArgs e)
         {
-            form2.Show();
-           
+            //form2.Show();
+            new Test().Show();
+            Hide();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            form4.Show();
+            //form4.Show();
+            new Admin().Show();
+            Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Close();
+            Environment.Exit(0);
         }
+
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -52,6 +58,11 @@ namespace Курсовой_проект
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

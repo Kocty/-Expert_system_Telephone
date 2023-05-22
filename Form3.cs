@@ -25,6 +25,7 @@ namespace Курсовой_проект
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,6 +55,7 @@ namespace Курсовой_проект
         private void Settings_FormClosing(object sender, FormClosingEventArgs e)
         {
             myConnection.Close();//при закрытии формы закрывает соединение с БД
+            new Menu().Show();
         }
 
         private void carsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

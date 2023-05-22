@@ -11,6 +11,7 @@ using System.Data.OleDb;//библиотека для работы с запро
 using System.Collections;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+
 namespace Курсовой_проект
 {
     public partial class Test : Form
@@ -28,6 +29,11 @@ namespace Курсовой_проект
         {
             string query = null;
             int n = 0;
+            dataGridView1.Rows.Clear();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
 
             try
             {
@@ -193,6 +199,7 @@ namespace Курсовой_проект
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+            
         }
 
         
@@ -219,6 +226,7 @@ namespace Курсовой_проект
         private void Test_FormClosing(object sender, FormClosingEventArgs e)
         {
             myConnection.Close();//при закрытии формы закрывает соединение с БД
+            new Menu().Show();  
 
         }
 
@@ -248,9 +256,10 @@ namespace Курсовой_проект
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
+            dataGridView1.Rows.Clear();
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -268,8 +277,6 @@ namespace Курсовой_проект
                 MessageBox.Show("Вариант отсутствует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            
-            
         }
     }
 }

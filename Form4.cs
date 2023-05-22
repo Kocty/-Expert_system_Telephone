@@ -27,16 +27,22 @@ namespace Курсовой_проект
             string Pas = textBox2.Text;
             if (Log==Login && Pas==Password)
             {
-                form3.Show();
+                //form3.Show();
+                new Settings().Show();
                 Hide();
                 textBox1.Text = "";
                 textBox2.Text = "";
             }
             else
             {
-                MessageBox.Show("Ошибка ввода", "Попробуйте заново!");
+                MessageBox.Show("Ошибка ввода", "Попробуйте заново!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void Admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            new Menu().Show();
         }
     }
 }
