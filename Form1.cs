@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Курсовой_проект
@@ -23,46 +16,41 @@ namespace Курсовой_проект
         Test form2;
         Settings form3;
         Admin form4;
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
+        /*Открытие форм и скрытие основной формы*/
         private void button1_Click(object sender, EventArgs e)
         {
-            //form2.Show();
             new Test().Show();
             Hide();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //form4.Show();
             new Admin().Show();
             Hide();
         }
 
+        /*Закрывание программы и всех форм*/
         private void button3_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
         }
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Environment.Exit(0);
         }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Курсовой_проект
@@ -18,7 +11,8 @@ namespace Курсовой_проект
             form3 = new Settings();
         }
         Settings form3;
-        private string Login = "admin";
+
+        private string Login = "admin";//объявление переменных с определенными данными
         private string Password = "12345";
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,11 +21,8 @@ namespace Курсовой_проект
             string Pas = textBox2.Text;
             if (Log==Login && Pas==Password)
             {
-                //form3.Show();
                 new Settings().Show();
                 Hide();
-                textBox1.Text = "";
-                textBox2.Text = "";
             }
             else
             {
@@ -43,6 +34,31 @@ namespace Курсовой_проект
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
         {
             new Menu().Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

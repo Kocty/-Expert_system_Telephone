@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.avto2DataSet = new Курсовой_проект.Avto2DataSet();
@@ -84,6 +81,7 @@
             this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.avto2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -97,7 +95,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(12, 638);
+            this.button1.Location = new System.Drawing.Point(12, 584);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(250, 100);
             this.button1.TabIndex = 0;
@@ -140,11 +138,11 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(268, 638);
+            this.button2.Location = new System.Drawing.Point(524, 584);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(250, 100);
             this.button2.TabIndex = 3;
-            this.button2.Text = "РЕЗУЛЬТАТ";
+            this.button2.Text = "ПОДОБРАТЬ АВТОМОБИЛЬ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -458,6 +456,7 @@
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(791, 270);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(400, 39);
             this.textBox1.TabIndex = 12;
             // 
@@ -466,6 +465,7 @@
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.Location = new System.Drawing.Point(791, 362);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(400, 39);
             this.textBox2.TabIndex = 13;
             // 
@@ -474,6 +474,7 @@
             this.textBox3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(791, 445);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(400, 39);
             this.textBox3.TabIndex = 14;
             // 
@@ -482,13 +483,14 @@
             this.textBox4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(791, 532);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(400, 39);
             this.textBox4.TabIndex = 15;
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(524, 638);
+            this.button3.Location = new System.Drawing.Point(791, 584);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(250, 100);
             this.button3.TabIndex = 16;
@@ -540,39 +542,15 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameAvto,
             this.Brand,
             this.PriceMin,
             this.PriceMax});
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView1.Location = new System.Drawing.Point(791, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(473, 222);
             this.dataGridView1.TabIndex = 21;
@@ -581,55 +559,67 @@
             // NameAvto
             // 
             this.NameAvto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameAvto.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameAvto.DefaultCellStyle = dataGridViewCellStyle1;
             this.NameAvto.FillWeight = 110F;
             this.NameAvto.HeaderText = "NameAvto";
             this.NameAvto.MinimumWidth = 15;
             this.NameAvto.Name = "NameAvto";
             this.NameAvto.ReadOnly = true;
-            this.NameAvto.Width = 114;
+            this.NameAvto.Width = 82;
             // 
             // Brand
             // 
             this.Brand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Brand.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Brand.DefaultCellStyle = dataGridViewCellStyle2;
             this.Brand.HeaderText = "Brand";
             this.Brand.Name = "Brand";
             this.Brand.ReadOnly = true;
-            this.Brand.Width = 80;
+            this.Brand.Width = 59;
             // 
             // PriceMin
             // 
             this.PriceMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle18.Format = "C0";
-            dataGridViewCellStyle18.NullValue = null;
-            this.PriceMin.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.PriceMin.DefaultCellStyle = dataGridViewCellStyle3;
             this.PriceMin.HeaderText = "PriceMin";
             this.PriceMin.Name = "PriceMin";
             this.PriceMin.ReadOnly = true;
-            this.PriceMin.Width = 102;
+            this.PriceMin.Width = 75;
             // 
             // PriceMax
             // 
             this.PriceMax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle19.Format = "C0";
-            dataGridViewCellStyle19.NullValue = null;
-            this.PriceMax.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.PriceMax.DefaultCellStyle = dataGridViewCellStyle4;
             this.PriceMax.HeaderText = "PriceMax";
             this.PriceMax.Name = "PriceMax";
             this.PriceMax.ReadOnly = true;
-            this.PriceMax.Width = 106;
+            this.PriceMax.Width = 77;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(268, 584);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(250, 100);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "ИНСТРУКЦИЯ";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1484, 761);
+            this.ClientSize = new System.Drawing.Size(1274, 691);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -723,5 +713,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceMin;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceMax;
+        private System.Windows.Forms.Button button4;
     }
 }

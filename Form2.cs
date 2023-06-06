@@ -1,35 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;//библиотека для работы с запросами для бд
-using System.Collections;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 
 namespace Курсовой_проект
 {
     public partial class Test : Form
     {
-        public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Avto2.accdb";
-        private OleDbConnection myConnection;
+        public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Avto2.accdb";//строка подключения к бд
+        private OleDbConnection myConnection;//создание открытого подключения к бд
         public Test()
         {
             InitializeComponent();
-            myConnection = new OleDbConnection(connectString);
-            myConnection.Open();
+            myConnection = new OleDbConnection(connectString);//задаем строку подключения
+            myConnection.Open();//открываем подключение к бд
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = null;
+            string query = null;//обьявление переменой для запроса
             int n = 0;
-            dataGridView1.Rows.Clear();
+            dataGridView1.Rows.Clear();//очистка таблицы и полей вывода
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
@@ -64,14 +56,13 @@ namespace Курсовой_проект
                 };
 
 
-                //блок выбора цены автомобиля и выполнения запроса к БД    ORDER BY RAND() LIMIT 1  ORDER BY RAND() LIMIT 1
+                //блок выбора цены автомобиля и выполнения запроса к БД 
                 if (radioButton1.Checked == true)//до 1 млн цена
                 {
                     switch (n)//проверка выбранной марки
                     {
-                        case 1:
+                        case 1://выполнение запроса
                             query = "SELECT NameAvto, Brand, PriceMin, PriceMax FROM cars WHERE Brand ='" + "Toyota" + "' AND PriceMax < 1000001";
-
                             break;
 
                         case 2:
@@ -95,7 +86,6 @@ namespace Курсовой_проект
                             query = "SELECT * FROM cars WHERE PriceMax < 1000001";
                             break;
                     }
-
 
                 }
                 else if (radioButton2.Checked == true)//от 1 до 3 млн цена
@@ -132,7 +122,7 @@ namespace Курсовой_проект
                     }
 
                 }
-                else if (radioButton3.Checked == true)//от 3 до 5 млн цена Toyota BMW Ford Kia Lada
+                else if (radioButton3.Checked == true)//от 3 до 5 млн цена 
                 {
                     switch (n)
                     {
@@ -166,8 +156,8 @@ namespace Курсовой_проект
 
                 }
 
-                OleDbCommand command = new OleDbCommand(query, myConnection);
-                OleDbDataReader reader = command.ExecuteReader();
+                OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
+                OleDbDataReader reader = command.ExecuteReader();//получение данных из бд
 
 
                 if (reader.HasRows == false) // блок проверки результата если он отсутствует то выводится сообщением об этом
@@ -177,13 +167,9 @@ namespace Курсовой_проект
                 }
                 else
                 {
-                    while (reader.Read())//запись значений в столбци таблицы
+                    while (reader.Read())//запись значений в столбцы таблицы
                     {
                         dataGridView1.Rows.Add(reader["NameAvto"], reader["Brand"], reader["PriceMin"], reader["PriceMax"]);
-
-                        //короче тема такая либо чекни видос индуса в ютубе сохранил и делай вывод значений в отдельные textbox по нажатию строки в datagridview либо 
-                        //выводи только id в datagridview считывай их и через какой нибудь цикл  for выводи textbox прямо из бд но как это делать полный хз так что пробуй костыль по первому способу 
-                        //хоть как нибудь сделать потому что надо уже заканчивать с тестом и делать добавления машин в бд
                     }
                 }
                 this.carsTableAdapter.Fill(this.avto2DataSet.cars);
@@ -198,18 +184,8 @@ namespace Курсовой_проект
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            Close();//закрытие формы
             
-        }
-
-        
-
-        private void carsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.carsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.avto2DataSet);
-
         }
 
         private void Test_Load(object sender, EventArgs e)
@@ -218,10 +194,7 @@ namespace Курсовой_проект
             this.carsTableAdapter.Fill(this.avto2DataSet.cars);
 
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Test_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -230,7 +203,7 @@ namespace Курсовой_проект
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)//очистка всех полей
         {
             radioButton1.Checked = false;
             radioButton2.Checked = false;
@@ -258,15 +231,14 @@ namespace Курсовой_проект
             textBox4.Text = "";
             dataGridView1.Rows.Clear();
         }
-
+        /*проверка на наличие записи при нажатии на строку в таблице, если отсутствует то выводит сообщение об этом*/
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (e.RowIndex >= 0)
+                if (e.RowIndex >= 0)//если запись есть то выводи значения из таблицы в поля вывода
                 {
                     textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    
                     textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                     textBox3.Text = textBox3.Text + " ₽";// добавляем в конце строки знак рубля(правый alt + 8)
@@ -281,5 +253,15 @@ namespace Курсовой_проект
 
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)//инструкция для прохождения теста
+        {
+            MessageBox.Show("Для прохождения теста выбирайте по одному варианту ответа на вопрос, после выбора всех ответов нажмите кнопку 'ПОДОБРАТЬ АВТОМОБИЛЬ' подходящие автомобили появятся в табличке в правом верхнем углу, вы можете нажимать на подходящие варианты и получать информацию в полях под таблицей. ", "Как проходить тест", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
