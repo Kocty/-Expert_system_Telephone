@@ -62,7 +62,7 @@ namespace Курсовой_проект
                     switch (n)//проверка выбранной марки
                     {
                         case 1://выполнение запроса
-                            query = "SELECT NameAvto, Brand, PriceMin, PriceMax FROM cars WHERE Brand ='" + "Toyota" + "' AND PriceMax < 1000001";
+                            query = "SELECT * FROM cars WHERE Brand ='" + "Toyota" + "' AND PriceMax < 1000001";
                             break;
 
                         case 2:
@@ -128,7 +128,6 @@ namespace Курсовой_проект
                     {
                         case 1:
                             query = "SELECT * FROM cars WHERE Brand ='" + "Toyota" + "' AND PriceMin > 2999999 AND PriceMax < 5000001 ";
-
                             break;
 
                         case 2:

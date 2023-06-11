@@ -107,7 +107,7 @@
             this.label3.Location = new System.Drawing.Point(2, 206);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 46);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 33;
             this.label3.Text = "admin\r\n12345";
             // 
             // Admin
