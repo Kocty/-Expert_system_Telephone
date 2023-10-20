@@ -6,14 +6,14 @@ namespace Курсовой_проект
 {
     public partial class Settings : Form
     {
-        public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Avto2.accdb";//строка подключения к бд
+        public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Telephone.accdb";//строка подключения к бд
         private OleDbConnection myConnection;//создание открытого подключения к бд
         public Settings()
         {
             InitializeComponent();
             myConnection = new OleDbConnection(connectString);//задаем строку подключения
             myConnection.Open();//открываем подключение к бд
-            comboBox1.SelectedItem = "Toyota"; //делает Toyota значением по умолчанию в выпадающем списке
+            comboBox1.SelectedItem = "Apple"; //делает Toyota значением по умолчанию в выпадающем списке
             
         }
 
@@ -22,7 +22,7 @@ namespace Курсовой_проект
         {
             try
             { 
-                string NameAvto = textBox1.Text;//объявление переменных
+                string NamePhone = textBox1.Text;//объявление переменных
                 string Brand = comboBox1.Text;
                 int PriceMin = 0, PriceMax = 0;
                 /*проверка правильности ввода в полях для ввода данных*/
@@ -53,11 +53,12 @@ namespace Курсовой_проект
                     MessageBox.Show("Максимальная цена не может быть меньше минимальной цены! Пожалуйста, попробуйте ещё раз!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else {//запрос на добаление данных
-                    string query = "INSERT INTO cars (NameAvto, Brand, PriceMin, PriceMax) VALUES ('" + NameAvto + "','" + Brand + "','" + PriceMin + "','" + PriceMax + "')";
+                    string query = "INSERT INTO phone (NamePhone, Brand, PriceMin, PriceMax) VALUES ('" + NamePhone + "','" + Brand + "','" + PriceMin + "','" + PriceMax + "')";
                     OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
                     command.ExecuteNonQuery();//возвращение затронутых строк
                     MessageBox.Show("Автомобиль добавлен ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.carsTableAdapter.Fill(this.avto2DataSet.cars);
+                    this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+                   
                 }
             }
             catch
@@ -76,11 +77,11 @@ namespace Курсовой_проект
             try
             {
                 int Id = Convert.ToInt32(textBox4.Text);
-                string query = "DELETE FROM cars WHERE Id = " + Id;//удаление строки данных
+                string query = "DELETE FROM phones WHERE Id = " + Id;//удаление строки данных
                 OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
                 command.ExecuteNonQuery();
                 MessageBox.Show("Автомобиль удален ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.carsTableAdapter.Fill(this.avto2DataSet.cars);
+                
             }
             catch
             {
@@ -128,7 +129,7 @@ namespace Курсовой_проект
                     OleDbCommand command = new OleDbCommand(query, myConnection);
                     command.ExecuteNonQuery();
                     MessageBox.Show("Данные изменены ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.carsTableAdapter.Fill(this.avto2DataSet.cars);
+                   this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
                 }
             }
             catch
@@ -143,8 +144,8 @@ namespace Курсовой_проект
 
         private void Settings_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "avto2DataSet.cars". При необходимости она может быть перемещена или удалена.
-            this.carsTableAdapter.Fill(this.avto2DataSet.cars);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "telephoneDataSet.phones". При необходимости она может быть перемещена или удалена.
+            this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
         }
 
         private void Settings_FormClosing(object sender, FormClosingEventArgs e)
@@ -161,7 +162,8 @@ namespace Курсовой_проект
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.carsTableAdapter.Fill(this.avto2DataSet.cars);//обновление таблицы
+           this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);//обновление таблицы
+           
         }
         
 
@@ -207,6 +209,14 @@ namespace Курсовой_проект
 
         private void carsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void phonesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.phonesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.telephoneDataSet);
 
         }
     }

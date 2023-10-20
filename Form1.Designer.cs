@@ -44,9 +44,9 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(43, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(898, 40);
+            this.label1.Size = new System.Drawing.Size(837, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ЭКСПЕРТНАЯ СИСТЕМЫ ПО ВЫБОРУ АВТОМОБИЛЯ ";
+            this.label1.Text = "ЭКСПЕРТНАЯ СИСТЕМЫ ПО ВЫБОРУ ТЕЛЕФОНА";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
