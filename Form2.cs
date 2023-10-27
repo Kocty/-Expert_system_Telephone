@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.OleDb;//библиотека для работы с запросами для бд
+using System.Text.RegularExpressions;
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -10,7 +11,7 @@ namespace Курсовой_проект
     {
         public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Telephone.accdb";//строка подключения к бд
         private OleDbConnection myConnection;//создание открытого подключения к бд
-        public int Price = 0;
+        Regex rx = new Regex(@"\D", RegexOptions.IgnoreCase);
         public Test()
         {
             InitializeComponent();
@@ -25,7 +26,8 @@ namespace Курсовой_проект
             string Diagonal = null;
             string Memory = null;
             string ScreenType = null;
-            string Price1 = null;
+            string PriceMin = null;
+            string PriceMax = null;
 
 
             dataGridView1.Rows.Clear();//очистка таблицы и полей вывода
@@ -36,95 +38,113 @@ namespace Курсовой_проект
 
             try
             {
-                //блок проверки выбора бренда и выбора ответа во всех вопросах
-                if (radioButton13.Checked == true && (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true) && (radioButton7.Checked == true || radioButton8.Checked == true || radioButton9.Checked == true) && (radioButton10.Checked == true || radioButton11.Checked == true || radioButton12.Checked == true))
+                if (radioButton13.Checked == true)//блок проверки выбора бренда и выбора ответа во всех вопросах
                 {
-                    brand = "Apple"; 
+                    brand = "Apple";
                 }
-                else if (radioButton14.Checked == true && (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true) && (radioButton7.Checked == true || radioButton8.Checked == true || radioButton9.Checked == true) && (radioButton10.Checked == true || radioButton11.Checked == true || radioButton12.Checked == true))
+                else if (radioButton14.Checked == true)
                 {
                     brand = "Xiaomi";
                 }
-                else if (radioButton15.Checked == true && (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true) && (radioButton7.Checked == true || radioButton8.Checked == true || radioButton9.Checked == true) && (radioButton10.Checked == true || radioButton11.Checked == true || radioButton12.Checked == true))
+                else if (radioButton15.Checked == true)
                 {
                     brand = "Samsung";
                 }
-                else if (radioButton16.Checked == true && (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true) && (radioButton7.Checked == true || radioButton8.Checked == true || radioButton9.Checked == true) && (radioButton10.Checked == true || radioButton11.Checked == true || radioButton12.Checked == true || radioButton19.Checked == true || radioButton20.Checked == true || radioButton21.Checked == true))
+                else if (radioButton16.Checked == true)
                 {
                     brand = "Honor";
                 }
-                else if (radioButton17.Checked == true && (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true) && (radioButton7.Checked == true || radioButton8.Checked == true || radioButton9.Checked == true) && (radioButton10.Checked == true || radioButton11.Checked == true || radioButton12.Checked == true || radioButton19.Checked == true || radioButton20.Checked == true || radioButton21.Checked == true))
+                else if (radioButton17.Checked == true)
                 {
                     brand = "Oppo";
                 }
-                else if (radioButton18.Checked == true && (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true) && (radioButton7.Checked == true || radioButton8.Checked == true || radioButton9.Checked == true) && (radioButton10.Checked == true || radioButton11.Checked == true || radioButton12.Checked == true || radioButton19.Checked == true || radioButton20.Checked == true || radioButton21.Checked == true))
+                else if (radioButton18.Checked == true)
                 {
-                    brand = "nothing"; //без бренда
+                    brand = "No"; //без бренда
                 };
 
                 if (radioButton4.Checked == true)//диагональ экрана
                 {
                     Diagonal = "5.6-6.1";
-                    
+
                 }
                 else if (radioButton5.Checked == true)
                 {
                     Diagonal = "6.2-6.5";
-                    
+
                 }
                 else if (radioButton6.Checked == true)
                 {
                     Diagonal = ">6.6";
-                    
+
                 };
 
-                if (radioButton1.Checked == true)
+                if (radioButton1.Checked == true)//размер памяти
                 {
-                    Memory = "256";
+                    Memory = "32";
 
                 }
                 else if (radioButton2.Checked == true)
                 {
-                    Memory = "512";
+                    Memory = "64";
 
                 }
                 else if (radioButton3.Checked == true)
                 {
-                    Memory = "1T";
+                    Memory = "128";
 
                 }
-                else if(radioButton7.Checked == true)//размер памяти
+                else if (radioButton7.Checked == true)
                 {
-                    Memory = "1T";
+                    Memory = "256";
                 }
                 else if (radioButton8.Checked == true)
                 {
-                    Memory = "64";
+                    Memory = "512";
                 }
                 else if (radioButton9.Checked == true)
                 {
-                    Memory = "128";
+                    Memory = "1T";
                 };
-                
+
                 if (radioButton10.Checked == true)//тип экрана
                 {
                     ScreenType = "TFT/LCD";
-                    
+
                 }
                 else if (radioButton11.Checked == true)
                 {
                     ScreenType = "IPS/PLS";
-                   
+
                 }
                 else if (radioButton12.Checked == true)
                 {
                     ScreenType = "AMOLED";
-                    
+
                 };
 
-                Price1 = Convert.ToString(trackBar1.Value);
-                query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND ScreenDiagonal ='" + Diagonal + "' AND Memory ='" + Memory + "' AND ScreenType ='" + ScreenType + "' AND Price <" + Price1 + " ";
-                
+                if(trackBar1.Value > 0 && trackBar2.Value <= 200000)
+                {
+                    PriceMin = Convert.ToString(trackBar1.Value);
+                    PriceMax = Convert.ToString(trackBar2.Value);
+                }
+                else
+                {
+                    MessageBox.Show("Цена не может быть меньше 0 и больше 200000", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                };
+
+                if ((radioButton13.Checked == true || radioButton14.Checked == true || radioButton15.Checked == true || radioButton16.Checked == true || radioButton17.Checked == true || radioButton18.Checked == true) && (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true) && (radioButton1.Checked == true || radioButton2.Checked == true || radioButton3.Checked == true || radioButton7.Checked == true || radioButton8.Checked == true || radioButton9.Checked == true) && (radioButton10.Checked == true || radioButton11.Checked == true || radioButton12.Checked == true))
+                {
+                    if(brand == "No")
+                    {
+                        query = "SELECT * FROM phones WHERE ScreenDiagonal ='" + Diagonal + "' AND Memory ='" + Memory + "' AND ScreenType ='" + ScreenType + "' AND Price >" + PriceMin + " AND Price <" + PriceMax + "";
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND ScreenDiagonal ='" + Diagonal + "' AND Memory ='" + Memory + "' AND ScreenType ='" + ScreenType + "' AND Price >" + PriceMin + " AND Price <" + PriceMax + "";
+                    }
+                }
+
                 //query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND Price <" + Price1 + " ";
 
                 //query = "SELECT * FROM phones WHERE Memory ='" + Memory + "'";
@@ -155,10 +175,6 @@ namespace Курсовой_проект
                 OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
                 OleDbDataReader reader = command.ExecuteReader();//получение данных из бд
 
-                textBox1.Text = brand;
-                textBox2.Text = Memory;
-                textBox3.Text = Convert.ToString(Price1);
-
                 if (reader.HasRows == false) // блок проверки результата если он отсутствует то выводится сообщением об этом
                 {
                     MessageBox.Show("Подходящий автомобиль отсутствует в базе данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -180,12 +196,35 @@ namespace Курсовой_проект
         }
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            Price = trackBar1.Value;
-            textBox5.Text = "" + Price;
+            textBox5.Text = "" + trackBar1.Value;
+            trackBar1.Maximum = trackBar2.Value;
         }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            trackBar1.Value = Convert.ToInt32(textBox5.Text);
+            try
+            {
+                trackBar1.Value = Convert.ToInt32(textBox5.Text);
+            }
+            catch
+            {
+                textBox5.Text = rx.Replace(textBox5.Text, "");
+            }
+        }
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            textBox6.Text = "" + trackBar2.Value;
+            trackBar2.Minimum = trackBar1.Value;
+        }
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                trackBar2.Value = Convert.ToInt32(textBox6.Text);
+            }
+            catch
+            {
+                textBox6.Text = rx.Replace(textBox6.Text, "");
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -197,14 +236,12 @@ namespace Курсовой_проект
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "telephoneDataSet.phones". При необходимости она может быть перемещена или удалена.
             this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
-            
         }
        
         private void Test_FormClosing(object sender, FormClosingEventArgs e)
         {
             myConnection.Close();//при закрытии формы закрывает соединение с БД
             new Menu().Show();  
-
         }
 
         private void button3_Click(object sender, EventArgs e)//очистка всех полей
