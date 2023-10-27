@@ -47,7 +47,6 @@
             this.label1.Size = new System.Drawing.Size(837, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "ЭКСПЕРТНАЯ СИСТЕМЫ ПО ВЫБОРУ ТЕЛЕФОНА";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 

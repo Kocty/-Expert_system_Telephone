@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.OleDb;//библиотека для работы с запросами для бд
-using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;//библиотека для регулярных выражений
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -11,14 +11,13 @@ namespace Курсовой_проект
     {
         public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Telephone.accdb";//строка подключения к бд
         private OleDbConnection myConnection;//создание открытого подключения к бд
-        Regex rx = new Regex(@"\D", RegexOptions.IgnoreCase);
+        Regex rx = new Regex(@"\D", RegexOptions.IgnoreCase);//переменная для textbox запрещающая писать всё кроме цифр
         public Test()
         {
             InitializeComponent();
             myConnection = new OleDbConnection(connectString);//задаем строку подключения
             myConnection.Open();//открываем подключение к бд
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             string query = null;//обьявление переменой для запроса
@@ -29,38 +28,24 @@ namespace Курсовой_проект
             string PriceMin = null;
             string PriceMax = null;
 
-
             dataGridView1.Rows.Clear();//очистка таблицы и полей вывода
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
 
             try
             {
-                if (radioButton13.Checked == true)//блок проверки выбора бренда и выбора ответа во всех вопросах
+                if (trackBar1.Value >= 0 && trackBar2.Value <= 200000)
                 {
-                    brand = "Apple";
+                    PriceMin = Convert.ToString(trackBar1.Value);
+                    PriceMax = Convert.ToString(trackBar2.Value);
                 }
-                else if (radioButton14.Checked == true)
+                else
                 {
-                    brand = "Xiaomi";
-                }
-                else if (radioButton15.Checked == true)
-                {
-                    brand = "Samsung";
-                }
-                else if (radioButton16.Checked == true)
-                {
-                    brand = "Honor";
-                }
-                else if (radioButton17.Checked == true)
-                {
-                    brand = "Oppo";
-                }
-                else if (radioButton18.Checked == true)
-                {
-                    brand = "No"; //без бренда
+                    MessageBox.Show("Цена не может быть меньше 0 и больше 200000", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 };
 
                 if (radioButton4.Checked == true)//диагональ экрана
@@ -76,9 +61,7 @@ namespace Курсовой_проект
                 else if (radioButton6.Checked == true)
                 {
                     Diagonal = ">6.6";
-
                 };
-
                 if (radioButton1.Checked == true)//размер памяти
                 {
                     Memory = "32";
@@ -123,14 +106,29 @@ namespace Курсовой_проект
 
                 };
 
-                if(trackBar1.Value > 0 && trackBar2.Value <= 200000)
+                if (radioButton13.Checked == true)//блок проверки выбора бренда и выбора ответа во всех вопросах
                 {
-                    PriceMin = Convert.ToString(trackBar1.Value);
-                    PriceMax = Convert.ToString(trackBar2.Value);
+                    brand = "Apple";
                 }
-                else
+                else if (radioButton14.Checked == true)
                 {
-                    MessageBox.Show("Цена не может быть меньше 0 и больше 200000", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    brand = "Xiaomi";
+                }
+                else if (radioButton15.Checked == true)
+                {
+                    brand = "Samsung";
+                }
+                else if (radioButton16.Checked == true)
+                {
+                    brand = "Honor";
+                }
+                else if (radioButton17.Checked == true)
+                {
+                    brand = "Oppo";
+                }
+                else if (radioButton18.Checked == true)
+                {
+                    brand = "No"; //без бренда
                 };
 
                 if ((radioButton13.Checked == true || radioButton14.Checked == true || radioButton15.Checked == true || radioButton16.Checked == true || radioButton17.Checked == true || radioButton18.Checked == true) && (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true) && (radioButton1.Checked == true || radioButton2.Checked == true || radioButton3.Checked == true || radioButton7.Checked == true || radioButton8.Checked == true || radioButton9.Checked == true) && (radioButton10.Checked == true || radioButton11.Checked == true || radioButton12.Checked == true))
@@ -144,33 +142,6 @@ namespace Курсовой_проект
                         query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND ScreenDiagonal ='" + Diagonal + "' AND Memory ='" + Memory + "' AND ScreenType ='" + ScreenType + "' AND Price >" + PriceMin + " AND Price <" + PriceMax + "";
                     }
                 }
-
-                //query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND Price <" + Price1 + " ";
-
-                //query = "SELECT * FROM phones WHERE Memory ='" + Memory + "'";
-
-                //query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND ScreenDiagonal ='" + Diagonal + "' AND Memory ='" + Memory + "' AND ScreenType ='" + ScreenType + "' AND Price < 15001";
-                //query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND Diagonal='" + Diagonal + "' AND Memory='" + Memory + "' AND ScreenType='" + ScreenType + "' AND PriceMax < 15001" ;
-                //query = "SELECT * FROM phones WHERE Memory = '64'";
-
-                //блок выбора цены автомобиля и выполнения запроса к БД 
-
-                //if (radioButton1.Checked == true)//до 15001 тыс цена
-                //{
-                //    Price1 = "15001";
-                //    query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND ScreenDiagonal ='" + Diagonal + "' AND Memory ='" + Memory + "' AND ScreenType ='" + ScreenType + "' AND Price <" + Price1 + "";
-                //}
-                //else if (radioButton2.Checked == true)//от 1 до 3 млн цена
-                //{
-                //    query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND ScreenDiagonal ='" + Diagonal + "' AND Memory ='" + Memory + "' AND ScreenType ='" + ScreenType + "' AND 15001 < Price > 50001 ";
-
-                //}
-                //else if (radioButton3.Checked == true)//от 3 до 5 млн цена 
-                //{
-                //    query = "SELECT * FROM phones WHERE Brand ='" + brand + "' AND ScreenDiagonal ='" + Diagonal + "' AND Memory ='" + Memory + "' AND ScreenType ='" + ScreenType + "' AND Price > 50001";
-
-                //}
-
 
                 OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
                 OleDbDataReader reader = command.ExecuteReader();//получение данных из бд
@@ -229,23 +200,22 @@ namespace Курсовой_проект
         private void button1_Click(object sender, EventArgs e)
         {
             Close();//закрытие формы
-            
         }
-
         private void Test_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "telephoneDataSet.phones". При необходимости она может быть перемещена или удалена.
             this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
         }
-       
         private void Test_FormClosing(object sender, FormClosingEventArgs e)
         {
             myConnection.Close();//при закрытии формы закрывает соединение с БД
             new Menu().Show();  
         }
-
         private void button3_Click(object sender, EventArgs e)//очистка всех полей
         {
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
             radioButton4.Checked = false;
             radioButton5.Checked = false;
             radioButton6.Checked = false;
@@ -265,10 +235,15 @@ namespace Курсовой_проект
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            trackBar1.Value = 0;
+            trackBar2.Value = 5000;
+            textBox5.Text = "0";
+            textBox6.Text = "5000";
             dataGridView1.Rows.Clear();
         }
-        /*проверка на наличие записи при нажатии на строку в таблице, если отсутствует то выводит сообщение об этом*/
-        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)/*проверка на наличие записи при нажатии на строку в таблице, если отсутствует то выводит сообщение об этом*/
         {
             try
             {
@@ -277,9 +252,9 @@ namespace Курсовой_проект
                     textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                     textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    textBox3.Text = textBox3.Text + " ₽";// добавляем в конце строки знак рубля(правый alt + 8)
                     textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    textBox4.Text = textBox4.Text + " ₽";
+                    textBox7.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    textBox8.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString() + " ₽";// добавляем в конце строки знак рубля(правый alt + 8)
                 }
 
             }
@@ -289,25 +264,9 @@ namespace Курсовой_проект
 
             }
         }
-
         private void button4_Click(object sender, EventArgs e)//инструкция для прохождения теста
         {
             MessageBox.Show("Для прохождения теста выбирайте по одному варианту ответа на вопрос, после выбора всех ответов нажмите кнопку 'ПОДОБРАТЬ Телефон' подходящие телефоны появятся в табличке в правом верхнем углу, вы можете нажимать на подходящие варианты и получать информацию в полях под таблицей. ", "Как проходить тест", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void phonesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.phonesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.telephoneDataSet);
-
-        }
-
-        
     }
-
 }

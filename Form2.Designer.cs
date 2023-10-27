@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -60,44 +61,49 @@
             this.radioButton11 = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.telephoneDataSet = new Курсовой_проект.TelephoneDataSet();
+            this.phonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phonesTableAdapter = new Курсовой_проект.TelephoneDataSetTableAdapters.phonesTableAdapter();
+            this.tableAdapterManager = new Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager();
             this.NamePhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScreenDiagonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Memory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScreenType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.telephoneDataSet = new Курсовой_проект.TelephoneDataSet();
-            this.phonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phonesTableAdapter = new Курсовой_проект.TelephoneDataSetTableAdapters.phonesTableAdapter();
-            this.tableAdapterManager = new Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phonesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +128,6 @@
             this.label1.Size = new System.Drawing.Size(643, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "1. Сколько вы готовы потратить на покупку телефона?";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
             // 
@@ -137,6 +142,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.trackBar2);
             this.panel1.Controls.Add(this.textBox5);
@@ -147,24 +154,35 @@
             this.panel1.Size = new System.Drawing.Size(782, 128);
             this.panel1.TabIndex = 4;
             // 
-            // textBox5
+            // textBox6
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(75, 86);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(333, 39);
-            this.textBox5.TabIndex = 23;
-            this.textBox5.Text = "0";
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox6.Location = new System.Drawing.Point(442, 86);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(180, 39);
+            this.textBox6.TabIndex = 25;
+            this.textBox6.Text = "5000";
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.LargeChange = 1000;
+            this.trackBar2.Location = new System.Drawing.Point(400, 52);
+            this.trackBar2.Maximum = 200000;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(330, 45);
+            this.trackBar2.SmallChange = 1000;
+            this.trackBar2.TabIndex = 24;
+            this.trackBar2.Value = 5000;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // trackBar1
             // 
             this.trackBar1.LargeChange = 1000;
             this.trackBar1.Location = new System.Drawing.Point(16, 52);
             this.trackBar1.Maximum = 200000;
-            this.trackBar1.Minimum = -1;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(392, 45);
+            this.trackBar1.Size = new System.Drawing.Size(330, 45);
             this.trackBar1.SmallChange = 1000;
             this.trackBar1.TabIndex = 7;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -387,6 +405,39 @@
             this.panel3.Size = new System.Drawing.Size(782, 100);
             this.panel3.TabIndex = 10;
             // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton3.Location = new System.Drawing.Point(226, 55);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(106, 35);
+            this.radioButton3.TabIndex = 15;
+            this.radioButton3.Text = "128ГБ";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton2.Location = new System.Drawing.Point(112, 55);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(92, 35);
+            this.radioButton2.TabIndex = 14;
+            this.radioButton2.Text = "64ГБ";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton1.Location = new System.Drawing.Point(6, 55);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(92, 35);
+            this.radioButton1.TabIndex = 13;
+            this.radioButton1.Text = "32ГБ";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -436,7 +487,7 @@
             this.textBox1.Location = new System.Drawing.Point(806, 270);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(400, 39);
+            this.textBox1.Size = new System.Drawing.Size(276, 39);
             this.textBox1.TabIndex = 12;
             // 
             // textBox2
@@ -445,26 +496,8 @@
             this.textBox2.Location = new System.Drawing.Point(806, 359);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(400, 39);
+            this.textBox2.Size = new System.Drawing.Size(135, 39);
             this.textBox2.TabIndex = 13;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(806, 445);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(400, 39);
-            this.textBox3.TabIndex = 14;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(806, 532);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(400, 39);
-            this.textBox4.TabIndex = 15;
             // 
             // button3
             // 
@@ -483,9 +516,9 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(800, 236);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(259, 31);
+            this.label6.Size = new System.Drawing.Size(234, 31);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Название автомобиля";
+            this.label6.Text = "Название телефона";
             // 
             // label7
             // 
@@ -493,29 +526,9 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(800, 325);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(228, 31);
+            this.label7.Size = new System.Drawing.Size(89, 31);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Марка автомобиля";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(800, 410);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(469, 31);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Средняя минимальная цена автомобмля";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(800, 498);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(477, 31);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Средняя максимальная цена автомобмля";
+            this.label7.Text = "Марка";
             // 
             // dataGridView1
             // 
@@ -537,71 +550,6 @@
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             // 
-            // NamePhone
-            // 
-            this.NamePhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NamePhone.DefaultCellStyle = dataGridViewCellStyle7;
-            this.NamePhone.FillWeight = 110F;
-            this.NamePhone.HeaderText = "NamePhone";
-            this.NamePhone.MinimumWidth = 15;
-            this.NamePhone.Name = "NamePhone";
-            this.NamePhone.ReadOnly = true;
-            this.NamePhone.Width = 89;
-            // 
-            // Brand
-            // 
-            this.Brand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Brand.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            this.Brand.ReadOnly = true;
-            this.Brand.Width = 59;
-            // 
-            // ScreenDiagonal
-            // 
-            this.ScreenDiagonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ScreenDiagonal.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ScreenDiagonal.FillWeight = 110F;
-            this.ScreenDiagonal.HeaderText = "ScreenDiagonal";
-            this.ScreenDiagonal.Name = "ScreenDiagonal";
-            this.ScreenDiagonal.ReadOnly = true;
-            this.ScreenDiagonal.Width = 103;
-            // 
-            // Memory
-            // 
-            this.Memory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Memory.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Memory.HeaderText = "Color";
-            this.Memory.Name = "Memory";
-            this.Memory.ReadOnly = true;
-            this.Memory.Width = 58;
-            // 
-            // ScreenType
-            // 
-            this.ScreenType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ScreenType.DefaultCellStyle = dataGridViewCellStyle11;
-            this.ScreenType.HeaderText = "ScreenType";
-            this.ScreenType.Name = "ScreenType";
-            this.ScreenType.ReadOnly = true;
-            this.ScreenType.Width = 86;
-            // 
-            // PriceMin
-            // 
-            this.PriceMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle12.Format = "C0";
-            dataGridViewCellStyle12.NullValue = null;
-            this.PriceMin.DefaultCellStyle = dataGridViewCellStyle12;
-            this.PriceMin.HeaderText = "Price";
-            this.PriceMin.Name = "PriceMin";
-            this.PriceMin.ReadOnly = true;
-            this.PriceMin.Width = 56;
-            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -612,28 +560,6 @@
             this.button4.Text = "ИНСТРУКЦИЯ";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(528, 86);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(221, 39);
-            this.textBox6.TabIndex = 25;
-            this.textBox6.Text = "5000";
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.LargeChange = 1000;
-            this.trackBar2.Location = new System.Drawing.Point(469, 52);
-            this.trackBar2.Maximum = 200000;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(280, 45);
-            this.trackBar2.SmallChange = 5000;
-            this.trackBar2.TabIndex = 24;
-            this.trackBar2.Value = 5000;
-            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // telephoneDataSet
             // 
@@ -659,38 +585,176 @@
             this.tableAdapterManager.ScreenTypeTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // radioButton3
+            // NamePhone
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton3.Location = new System.Drawing.Point(226, 55);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(106, 35);
-            this.radioButton3.TabIndex = 15;
-            this.radioButton3.Text = "128ГБ";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.NamePhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NamePhone.DefaultCellStyle = dataGridViewCellStyle31;
+            this.NamePhone.FillWeight = 110F;
+            this.NamePhone.HeaderText = "NamePhone";
+            this.NamePhone.MinimumWidth = 15;
+            this.NamePhone.Name = "NamePhone";
+            this.NamePhone.ReadOnly = true;
+            this.NamePhone.Width = 89;
             // 
-            // radioButton2
+            // Brand
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.Location = new System.Drawing.Point(112, 55);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(92, 35);
-            this.radioButton2.TabIndex = 14;
-            this.radioButton2.Text = "64ГБ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.Brand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Brand.DefaultCellStyle = dataGridViewCellStyle32;
+            this.Brand.HeaderText = "Brand";
+            this.Brand.Name = "Brand";
+            this.Brand.ReadOnly = true;
+            this.Brand.Width = 59;
             // 
-            // radioButton1
+            // ScreenDiagonal
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.Location = new System.Drawing.Point(6, 55);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(92, 35);
-            this.radioButton1.TabIndex = 13;
-            this.radioButton1.Text = "32ГБ";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.ScreenDiagonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScreenDiagonal.DefaultCellStyle = dataGridViewCellStyle33;
+            this.ScreenDiagonal.FillWeight = 110F;
+            this.ScreenDiagonal.HeaderText = "ScreenDiagonal";
+            this.ScreenDiagonal.Name = "ScreenDiagonal";
+            this.ScreenDiagonal.ReadOnly = true;
+            this.ScreenDiagonal.Width = 103;
+            // 
+            // Memory
+            // 
+            this.Memory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Memory.DefaultCellStyle = dataGridViewCellStyle34;
+            this.Memory.HeaderText = "Memory";
+            this.Memory.Name = "Memory";
+            this.Memory.ReadOnly = true;
+            this.Memory.Width = 72;
+            // 
+            // ScreenType
+            // 
+            this.ScreenType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScreenType.DefaultCellStyle = dataGridViewCellStyle35;
+            this.ScreenType.HeaderText = "ScreenType";
+            this.ScreenType.Name = "ScreenType";
+            this.ScreenType.ReadOnly = true;
+            this.ScreenType.Width = 86;
+            // 
+            // PriceMin
+            // 
+            this.PriceMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle36.Format = "C0";
+            dataGridViewCellStyle36.NullValue = null;
+            this.PriceMin.DefaultCellStyle = dataGridViewCellStyle36;
+            this.PriceMin.HeaderText = "Price";
+            this.PriceMin.Name = "PriceMin";
+            this.PriceMin.ReadOnly = true;
+            this.PriceMin.Width = 56;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox5.Location = new System.Drawing.Point(61, 83);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(180, 39);
+            this.textBox5.TabIndex = 23;
+            this.textBox5.Text = "0";
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(10, 86);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 31);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "От";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(394, 89);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 31);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "До";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(941, 325);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(141, 31);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Тип экрана";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(947, 359);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(135, 39);
+            this.textBox3.TabIndex = 24;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox4.Location = new System.Drawing.Point(806, 443);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(135, 39);
+            this.textBox4.TabIndex = 28;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(941, 409);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 31);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Память";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(800, 409);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(133, 31);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Диагональ";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox7.Location = new System.Drawing.Point(947, 443);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(135, 39);
+            this.textBox7.TabIndex = 25;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(800, 495);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(71, 31);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Цена";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox8.Location = new System.Drawing.Point(806, 529);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(276, 39);
+            this.textBox8.TabIndex = 29;
             // 
             // Test
             // 
@@ -698,15 +762,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1419, 741);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel5);
@@ -726,6 +794,7 @@
             this.Load += new System.EventHandler(this.Test_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -736,7 +805,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phonesBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -775,31 +843,37 @@
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
         private TelephoneDataSet telephoneDataSet;
         private System.Windows.Forms.BindingSource phonesBindingSource;
         private TelephoneDataSetTableAdapters.phonesTableAdapter phonesTableAdapter;
         private TelephoneDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NamePhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
         private System.Windows.Forms.DataGridViewTextBoxColumn ScreenDiagonal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Memory;
         private System.Windows.Forms.DataGridViewTextBoxColumn ScreenType;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceMin;
-        private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }

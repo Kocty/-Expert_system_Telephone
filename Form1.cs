@@ -16,41 +16,23 @@ namespace Курсовой_проект
         Test form2;
         Settings form3;
         Admin form4;
-        
-        /*Открытие форм и скрытие основной формы*/
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)/*Открытие форм и скрытие основной формы*/
         {
             new Test().Show();
             Hide();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             new Admin().Show();
             Hide();
         }
-
-        /*Закрывание программы и всех форм*/
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)/*Закрывание программы и всех форм*/
         {
             Environment.Exit(0);
         }
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
