@@ -2,8 +2,6 @@
 using System.Windows.Forms;
 using System.Data.OleDb;//библиотека для работы с запросами для бд
 using System.Text.RegularExpressions;//библиотека для регулярных выражений
-using System.Diagnostics;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Курсовой_проект
 {

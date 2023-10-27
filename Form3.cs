@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.OleDb;
-using System.Diagnostics;
+using System.Text.RegularExpressions;//библиотека для регулярных выражений
 using System.Windows.Forms;
 
 namespace Курсовой_проект
@@ -9,7 +9,8 @@ namespace Курсовой_проект
     {
         public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Telephone.accdb";//строка подключения к бд
         private OleDbConnection myConnection;//создание открытого подключения к бд
-        string query = null;
+        Regex rx = new Regex(@"\D", RegexOptions.IgnoreCase);//переменная для textbox запрещающая писать всё кроме цифр
+        public string query = null;
         public Settings()
         {
             InitializeComponent();
@@ -135,18 +136,22 @@ namespace Курсовой_проект
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            textBox2.Text = rx.Replace(textBox2.Text, "");
             textBox2.MaxLength = 6;//максимальная длина числа в поле
         }
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
+            textBox4.Text = rx.Replace(textBox4.Text, "");
             textBox4.MaxLength = 4;//максимальная длина числа в поле
         }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
+            textBox5.Text = rx.Replace(textBox5.Text, "");
             textBox5.MaxLength = 4;//максимальная длина числа в поле
         }
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
+            textBox6.Text = rx.Replace(textBox6.Text, "");
             textBox6.MaxLength = 6;//максимальная длина числа в поле
         }
     }
