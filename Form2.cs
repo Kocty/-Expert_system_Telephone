@@ -170,9 +170,18 @@ namespace Курсовой_проект
         }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
+            textBox5.MaxLength = 6;
             try
             {
-                trackBar1.Value = Convert.ToInt32(textBox5.Text);
+                int value = Convert.ToInt32(textBox5.Text);
+                if (trackBar1.Maximum < value)
+                {
+                    textBox5.Text = trackBar1.Value.ToString();
+                }
+                else
+                {
+                    trackBar1.Value = Convert.ToInt32(textBox5.Text);
+                }
             }
             catch
             {
@@ -186,9 +195,18 @@ namespace Курсовой_проект
         }
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
+            textBox6.MaxLength = 6;
             try
             {
-                trackBar2.Value = Convert.ToInt32(textBox6.Text);
+                int value = Convert.ToInt32(textBox6.Text);
+                if (value > 200000)
+                {
+                    textBox6.Text = "200000";
+                }
+                else
+                {
+                    trackBar2.Value = Convert.ToInt32(textBox6.Text); 
+                }
             }
             catch
             {
@@ -235,10 +253,10 @@ namespace Курсовой_проект
             textBox4.Text = "";
             textBox7.Text = "";
             textBox8.Text = "";
-            trackBar1.Value = 0;
-            trackBar2.Value = 5000;
-            textBox5.Text = "0";
-            textBox6.Text = "5000";
+            trackBar1.Value = 5000;
+            trackBar2.Value = 10000;
+            textBox5.Text = "5000";
+            textBox6.Text = "10000";
             dataGridView1.Rows.Clear();
         }
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)/*проверка на наличие записи при нажатии на строку в таблице, если отсутствует то выводит сообщение об этом*/
@@ -254,12 +272,10 @@ namespace Курсовой_проект
                     textBox7.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                     textBox8.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString() + " ₽";// добавляем в конце строки знак рубля(правый alt + 8)
                 }
-
             }
             catch
             {
                 MessageBox.Show("Вариант отсутствует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
         private void button4_Click(object sender, EventArgs e)//инструкция для прохождения теста

@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -74,20 +77,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.telephoneDataSet = new Курсовой_проект.TelephoneDataSet();
-            this.phonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phonesTableAdapter = new Курсовой_проект.TelephoneDataSetTableAdapters.phonesTableAdapter();
-            this.tableAdapterManager = new Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager();
             this.NamePhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScreenDiagonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Memory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScreenType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.telephoneDataSet = new Курсовой_проект.TelephoneDataSet();
+            this.phonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phonesTableAdapter = new Курсовой_проект.TelephoneDataSetTableAdapters.phonesTableAdapter();
+            this.tableAdapterManager = new Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -154,6 +154,26 @@
             this.panel1.Size = new System.Drawing.Size(782, 128);
             this.panel1.TabIndex = 4;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(394, 89);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 31);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "До";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(10, 86);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 31);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "От";
+            // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -161,7 +181,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(180, 39);
             this.textBox6.TabIndex = 25;
-            this.textBox6.Text = "5000";
+            this.textBox6.Text = "10000";
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // trackBar2
@@ -169,22 +189,35 @@
             this.trackBar2.LargeChange = 1000;
             this.trackBar2.Location = new System.Drawing.Point(400, 52);
             this.trackBar2.Maximum = 200000;
+            this.trackBar2.Minimum = 10000;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(330, 45);
             this.trackBar2.SmallChange = 1000;
             this.trackBar2.TabIndex = 24;
-            this.trackBar2.Value = 5000;
+            this.trackBar2.Value = 10000;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox5.Location = new System.Drawing.Point(61, 83);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(180, 39);
+            this.textBox5.TabIndex = 23;
+            this.textBox5.Text = "5000";
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // trackBar1
             // 
             this.trackBar1.LargeChange = 1000;
             this.trackBar1.Location = new System.Drawing.Point(16, 52);
-            this.trackBar1.Maximum = 200000;
+            this.trackBar1.Maximum = 10000;
+            this.trackBar1.Minimum = 5000;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(330, 45);
             this.trackBar1.SmallChange = 1000;
             this.trackBar1.TabIndex = 7;
+            this.trackBar1.Value = 5000;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label2
@@ -550,6 +583,71 @@
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             // 
+            // NamePhone
+            // 
+            this.NamePhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NamePhone.DefaultCellStyle = dataGridViewCellStyle37;
+            this.NamePhone.FillWeight = 110F;
+            this.NamePhone.HeaderText = "NamePhone";
+            this.NamePhone.MinimumWidth = 15;
+            this.NamePhone.Name = "NamePhone";
+            this.NamePhone.ReadOnly = true;
+            this.NamePhone.Width = 89;
+            // 
+            // Brand
+            // 
+            this.Brand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Brand.DefaultCellStyle = dataGridViewCellStyle38;
+            this.Brand.HeaderText = "Brand";
+            this.Brand.Name = "Brand";
+            this.Brand.ReadOnly = true;
+            this.Brand.Width = 59;
+            // 
+            // ScreenDiagonal
+            // 
+            this.ScreenDiagonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScreenDiagonal.DefaultCellStyle = dataGridViewCellStyle39;
+            this.ScreenDiagonal.FillWeight = 110F;
+            this.ScreenDiagonal.HeaderText = "ScreenDiagonal";
+            this.ScreenDiagonal.Name = "ScreenDiagonal";
+            this.ScreenDiagonal.ReadOnly = true;
+            this.ScreenDiagonal.Width = 103;
+            // 
+            // Memory
+            // 
+            this.Memory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Memory.DefaultCellStyle = dataGridViewCellStyle40;
+            this.Memory.HeaderText = "Memory";
+            this.Memory.Name = "Memory";
+            this.Memory.ReadOnly = true;
+            this.Memory.Width = 72;
+            // 
+            // ScreenType
+            // 
+            this.ScreenType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScreenType.DefaultCellStyle = dataGridViewCellStyle41;
+            this.ScreenType.HeaderText = "ScreenType";
+            this.ScreenType.Name = "ScreenType";
+            this.ScreenType.ReadOnly = true;
+            this.ScreenType.Width = 86;
+            // 
+            // PriceMin
+            // 
+            this.PriceMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle42.Format = "C0";
+            dataGridViewCellStyle42.NullValue = null;
+            this.PriceMin.DefaultCellStyle = dataGridViewCellStyle42;
+            this.PriceMin.HeaderText = "Price";
+            this.PriceMin.Name = "PriceMin";
+            this.PriceMin.ReadOnly = true;
+            this.PriceMin.Width = 56;
+            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -584,101 +682,6 @@
             this.tableAdapterManager.ScreenDiagonalTableAdapter = null;
             this.tableAdapterManager.ScreenTypeTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // NamePhone
-            // 
-            this.NamePhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NamePhone.DefaultCellStyle = dataGridViewCellStyle31;
-            this.NamePhone.FillWeight = 110F;
-            this.NamePhone.HeaderText = "NamePhone";
-            this.NamePhone.MinimumWidth = 15;
-            this.NamePhone.Name = "NamePhone";
-            this.NamePhone.ReadOnly = true;
-            this.NamePhone.Width = 89;
-            // 
-            // Brand
-            // 
-            this.Brand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Brand.DefaultCellStyle = dataGridViewCellStyle32;
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            this.Brand.ReadOnly = true;
-            this.Brand.Width = 59;
-            // 
-            // ScreenDiagonal
-            // 
-            this.ScreenDiagonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ScreenDiagonal.DefaultCellStyle = dataGridViewCellStyle33;
-            this.ScreenDiagonal.FillWeight = 110F;
-            this.ScreenDiagonal.HeaderText = "ScreenDiagonal";
-            this.ScreenDiagonal.Name = "ScreenDiagonal";
-            this.ScreenDiagonal.ReadOnly = true;
-            this.ScreenDiagonal.Width = 103;
-            // 
-            // Memory
-            // 
-            this.Memory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Memory.DefaultCellStyle = dataGridViewCellStyle34;
-            this.Memory.HeaderText = "Memory";
-            this.Memory.Name = "Memory";
-            this.Memory.ReadOnly = true;
-            this.Memory.Width = 72;
-            // 
-            // ScreenType
-            // 
-            this.ScreenType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ScreenType.DefaultCellStyle = dataGridViewCellStyle35;
-            this.ScreenType.HeaderText = "ScreenType";
-            this.ScreenType.Name = "ScreenType";
-            this.ScreenType.ReadOnly = true;
-            this.ScreenType.Width = 86;
-            // 
-            // PriceMin
-            // 
-            this.PriceMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle36.Format = "C0";
-            dataGridViewCellStyle36.NullValue = null;
-            this.PriceMin.DefaultCellStyle = dataGridViewCellStyle36;
-            this.PriceMin.HeaderText = "Price";
-            this.PriceMin.Name = "PriceMin";
-            this.PriceMin.ReadOnly = true;
-            this.PriceMin.Width = 56;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(61, 83);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(180, 39);
-            this.textBox5.TabIndex = 23;
-            this.textBox5.Text = "0";
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(10, 86);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 31);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "От";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(394, 89);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 31);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "До";
             // 
             // label12
             // 
