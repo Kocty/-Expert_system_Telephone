@@ -132,7 +132,26 @@
               <Mapping SourceColumn="ScreenType" DataSetColumn="ScreenType" />
               <Mapping SourceColumn="Price" DataSetColumn="Price" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="TelephoneConnectionString (Settings)" DbObjectName="phones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price
+FROM            phones
+ORDER BY Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TelephoneConnectionString (Settings)" DbObjectName="phones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price FROM phones</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ScreenDiagonalTableAdapter" GeneratorDataComponentClassName="ScreenDiagonalTableAdapter" Name="ScreenDiagonal" UserDataComponentName="ScreenDiagonalTableAdapter">
             <MainSource>
@@ -280,11 +299,11 @@
   <xs:element name="TelephoneDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="TelephoneDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TelephoneDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Brands" msprop:Generator_RowClassName="BrandsRow" msprop:Generator_RowEvHandlerName="BrandsRowChangeEventHandler" msprop:Generator_RowDeletedName="BrandsRowDeleted" msprop:Generator_RowDeletingName="BrandsRowDeleting" msprop:Generator_RowEvArgName="BrandsRowChangeEvent" msprop:Generator_TablePropName="Brands" msprop:Generator_RowChangedName="BrandsRowChanged" msprop:Generator_UserTableName="Brands" msprop:Generator_RowChangingName="BrandsRowChanging" msprop:Generator_TableClassName="BrandsDataTable" msprop:Generator_TableVarName="tableBrands">
+        <xs:element name="Brands" msprop:Generator_RowEvHandlerName="BrandsRowChangeEventHandler" msprop:Generator_RowDeletedName="BrandsRowDeleted" msprop:Generator_RowDeletingName="BrandsRowDeleting" msprop:Generator_RowEvArgName="BrandsRowChangeEvent" msprop:Generator_TablePropName="Brands" msprop:Generator_RowChangedName="BrandsRowChanged" msprop:Generator_UserTableName="Brands" msprop:Generator_RowChangingName="BrandsRowChanging" msprop:Generator_RowClassName="BrandsRow" msprop:Generator_TableClassName="BrandsDataTable" msprop:Generator_TableVarName="tableBrands">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
-              <xs:element name="NameBrand" msprop:Generator_UserColumnName="NameBrand" msprop:Generator_ColumnPropNameInTable="NameBrandColumn" msprop:Generator_ColumnPropNameInRow="NameBrand" msprop:Generator_ColumnVarNameInTable="columnNameBrand" minOccurs="0">
+              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
+              <xs:element name="NameBrand" msprop:Generator_ColumnPropNameInTable="NameBrandColumn" msprop:Generator_ColumnPropNameInRow="NameBrand" msprop:Generator_UserColumnName="NameBrand" msprop:Generator_ColumnVarNameInTable="columnNameBrand" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
@@ -294,54 +313,54 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="phones" msprop:Generator_RowClassName="phonesRow" msprop:Generator_RowEvHandlerName="phonesRowChangeEventHandler" msprop:Generator_RowDeletedName="phonesRowDeleted" msprop:Generator_RowDeletingName="phonesRowDeleting" msprop:Generator_RowEvArgName="phonesRowChangeEvent" msprop:Generator_TablePropName="phones" msprop:Generator_RowChangedName="phonesRowChanged" msprop:Generator_UserTableName="phones" msprop:Generator_RowChangingName="phonesRowChanging" msprop:Generator_TableClassName="phonesDataTable" msprop:Generator_TableVarName="tablephones">
+        <xs:element name="phones" msprop:Generator_RowEvHandlerName="phonesRowChangeEventHandler" msprop:Generator_RowDeletedName="phonesRowDeleted" msprop:Generator_RowDeletingName="phonesRowDeleting" msprop:Generator_RowEvArgName="phonesRowChangeEvent" msprop:Generator_TablePropName="phones" msprop:Generator_RowChangedName="phonesRowChanged" msprop:Generator_UserTableName="phones" msprop:Generator_RowChangingName="phonesRowChanging" msprop:Generator_RowClassName="phonesRow" msprop:Generator_TableClassName="phonesDataTable" msprop:Generator_TableVarName="tablephones">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
-              <xs:element name="NamePhone" msprop:Generator_UserColumnName="NamePhone" msprop:Generator_ColumnPropNameInTable="NamePhoneColumn" msprop:Generator_ColumnPropNameInRow="NamePhone" msprop:Generator_ColumnVarNameInTable="columnNamePhone" minOccurs="0">
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="NamePhone" msprop:Generator_ColumnPropNameInTable="NamePhoneColumn" msprop:Generator_ColumnPropNameInRow="NamePhone" msprop:Generator_UserColumnName="NamePhone" msprop:Generator_ColumnVarNameInTable="columnNamePhone" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Brand" msprop:Generator_UserColumnName="Brand" msprop:Generator_ColumnPropNameInTable="BrandColumn" msprop:Generator_ColumnPropNameInRow="Brand" msprop:Generator_ColumnVarNameInTable="columnBrand" minOccurs="0">
+              <xs:element name="Brand" msprop:Generator_ColumnPropNameInTable="BrandColumn" msprop:Generator_ColumnPropNameInRow="Brand" msprop:Generator_UserColumnName="Brand" msprop:Generator_ColumnVarNameInTable="columnBrand" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ScreenDiagonal" msprop:Generator_UserColumnName="ScreenDiagonal" msprop:Generator_ColumnPropNameInTable="ScreenDiagonalColumn" msprop:Generator_ColumnPropNameInRow="ScreenDiagonal" msprop:Generator_ColumnVarNameInTable="columnScreenDiagonal" minOccurs="0">
+              <xs:element name="ScreenDiagonal" msprop:Generator_ColumnPropNameInTable="ScreenDiagonalColumn" msprop:Generator_ColumnPropNameInRow="ScreenDiagonal" msprop:Generator_UserColumnName="ScreenDiagonal" msprop:Generator_ColumnVarNameInTable="columnScreenDiagonal" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Memory" msprop:Generator_UserColumnName="Memory" msprop:Generator_ColumnPropNameInTable="MemoryColumn" msprop:Generator_ColumnPropNameInRow="Memory" msprop:Generator_ColumnVarNameInTable="columnMemory" minOccurs="0">
+              <xs:element name="Memory" msprop:Generator_ColumnPropNameInTable="MemoryColumn" msprop:Generator_ColumnPropNameInRow="Memory" msprop:Generator_UserColumnName="Memory" msprop:Generator_ColumnVarNameInTable="columnMemory" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ScreenType" msprop:Generator_UserColumnName="ScreenType" msprop:Generator_ColumnPropNameInTable="ScreenTypeColumn" msprop:Generator_ColumnPropNameInRow="ScreenType" msprop:Generator_ColumnVarNameInTable="columnScreenType" minOccurs="0">
+              <xs:element name="ScreenType" msprop:Generator_ColumnPropNameInTable="ScreenTypeColumn" msprop:Generator_ColumnPropNameInRow="ScreenType" msprop:Generator_UserColumnName="ScreenType" msprop:Generator_ColumnVarNameInTable="columnScreenType" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Price" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_UserColumnName="Price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Price" msprop:Generator_UserColumnName="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ScreenDiagonal" msprop:Generator_RowClassName="ScreenDiagonalRow" msprop:Generator_RowEvHandlerName="ScreenDiagonalRowChangeEventHandler" msprop:Generator_RowDeletedName="ScreenDiagonalRowDeleted" msprop:Generator_RowDeletingName="ScreenDiagonalRowDeleting" msprop:Generator_RowEvArgName="ScreenDiagonalRowChangeEvent" msprop:Generator_TablePropName="ScreenDiagonal" msprop:Generator_RowChangedName="ScreenDiagonalRowChanged" msprop:Generator_UserTableName="ScreenDiagonal" msprop:Generator_RowChangingName="ScreenDiagonalRowChanging" msprop:Generator_TableClassName="ScreenDiagonalDataTable" msprop:Generator_TableVarName="tableScreenDiagonal">
+        <xs:element name="ScreenDiagonal" msprop:Generator_RowEvHandlerName="ScreenDiagonalRowChangeEventHandler" msprop:Generator_RowDeletedName="ScreenDiagonalRowDeleted" msprop:Generator_RowDeletingName="ScreenDiagonalRowDeleting" msprop:Generator_RowEvArgName="ScreenDiagonalRowChangeEvent" msprop:Generator_TablePropName="ScreenDiagonal" msprop:Generator_RowChangedName="ScreenDiagonalRowChanged" msprop:Generator_UserTableName="ScreenDiagonal" msprop:Generator_RowChangingName="ScreenDiagonalRowChanging" msprop:Generator_RowClassName="ScreenDiagonalRow" msprop:Generator_TableClassName="ScreenDiagonalDataTable" msprop:Generator_TableVarName="tableScreenDiagonal">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
-              <xs:element name="Screen" msprop:Generator_UserColumnName="Screen" msprop:Generator_ColumnPropNameInTable="ScreenColumn" msprop:Generator_ColumnPropNameInRow="Screen" msprop:Generator_ColumnVarNameInTable="columnScreen" minOccurs="0">
+              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
+              <xs:element name="Screen" msprop:Generator_ColumnPropNameInTable="ScreenColumn" msprop:Generator_ColumnPropNameInRow="Screen" msprop:Generator_UserColumnName="Screen" msprop:Generator_ColumnVarNameInTable="columnScreen" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
@@ -351,11 +370,11 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ScreenType" msprop:Generator_RowClassName="ScreenTypeRow" msprop:Generator_RowEvHandlerName="ScreenTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ScreenTypeRowDeleted" msprop:Generator_RowDeletingName="ScreenTypeRowDeleting" msprop:Generator_RowEvArgName="ScreenTypeRowChangeEvent" msprop:Generator_TablePropName="ScreenType" msprop:Generator_RowChangedName="ScreenTypeRowChanged" msprop:Generator_UserTableName="ScreenType" msprop:Generator_RowChangingName="ScreenTypeRowChanging" msprop:Generator_TableClassName="ScreenTypeDataTable" msprop:Generator_TableVarName="tableScreenType">
+        <xs:element name="ScreenType" msprop:Generator_RowEvHandlerName="ScreenTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ScreenTypeRowDeleted" msprop:Generator_RowDeletingName="ScreenTypeRowDeleting" msprop:Generator_RowEvArgName="ScreenTypeRowChangeEvent" msprop:Generator_TablePropName="ScreenType" msprop:Generator_RowChangedName="ScreenTypeRowChanged" msprop:Generator_UserTableName="ScreenType" msprop:Generator_RowChangingName="ScreenTypeRowChanging" msprop:Generator_RowClassName="ScreenTypeRow" msprop:Generator_TableClassName="ScreenTypeDataTable" msprop:Generator_TableVarName="tableScreenType">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
-              <xs:element name="Screen" msprop:Generator_UserColumnName="Screen" msprop:Generator_ColumnPropNameInTable="ScreenColumn" msprop:Generator_ColumnPropNameInRow="Screen" msprop:Generator_ColumnVarNameInTable="columnScreen" minOccurs="0">
+              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
+              <xs:element name="Screen" msprop:Generator_ColumnPropNameInTable="ScreenColumn" msprop:Generator_ColumnPropNameInRow="Screen" msprop:Generator_UserColumnName="Screen" msprop:Generator_ColumnVarNameInTable="columnScreen" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -365,11 +384,11 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Memorys" msprop:Generator_RowEvHandlerName="MemorysRowChangeEventHandler" msprop:Generator_RowDeletedName="MemorysRowDeleted" msprop:Generator_RowDeletingName="MemorysRowDeleting" msprop:Generator_RowEvArgName="MemorysRowChangeEvent" msprop:Generator_TablePropName="Memorys" msprop:Generator_RowChangedName="MemorysRowChanged" msprop:Generator_RowChangingName="MemorysRowChanging" msprop:Generator_TableClassName="MemorysDataTable" msprop:Generator_RowClassName="MemorysRow" msprop:Generator_TableVarName="tableMemorys" msprop:Generator_UserTableName="Memorys">
+        <xs:element name="Memorys" msprop:Generator_RowClassName="MemorysRow" msprop:Generator_RowEvHandlerName="MemorysRowChangeEventHandler" msprop:Generator_RowDeletedName="MemorysRowDeleted" msprop:Generator_RowDeletingName="MemorysRowDeleting" msprop:Generator_RowEvArgName="MemorysRowChangeEvent" msprop:Generator_TablePropName="Memorys" msprop:Generator_RowChangedName="MemorysRowChanged" msprop:Generator_UserTableName="Memorys" msprop:Generator_RowChangingName="MemorysRowChanging" msprop:Generator_TableClassName="MemorysDataTable" msprop:Generator_TableVarName="tableMemorys">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnVarNameInTable="columnКод" msprop:Generator_UserColumnName="Код" type="xs:int" />
-              <xs:element name="Memory" msprop:Generator_ColumnPropNameInRow="Memory" msprop:Generator_ColumnPropNameInTable="MemoryColumn" msprop:Generator_ColumnVarNameInTable="columnMemory" msprop:Generator_UserColumnName="Memory" minOccurs="0">
+              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
+              <xs:element name="Memory" msprop:Generator_UserColumnName="Memory" msprop:Generator_ColumnPropNameInTable="MemoryColumn" msprop:Generator_ColumnPropNameInRow="Memory" msprop:Generator_ColumnVarNameInTable="columnMemory" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />

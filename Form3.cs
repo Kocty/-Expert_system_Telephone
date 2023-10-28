@@ -23,15 +23,14 @@ namespace Курсовой_проект
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            string NamePhone = textBox1.Text;//объявление переменных
-            string Brand = comboBox1.Text;
+            string Brand = comboBox1.Text;//объявление переменных
             string Diagonal = comboBox2.Text;
             string Memory = comboBox3.Text;
             string ScreenType = comboBox4.Text;
-            int Price = Convert.ToInt32(textBox2.Text);
             try
             {
-                //int Price = Convert.ToInt32(textBox2.Text);
+                string NamePhone = textBox1.Text;
+                int Price = Convert.ToInt32(textBox2.Text);
                 if ((Price <= 0) || (Price > 200000))//проверека того что минимальная цена меньше максимальной 
                 {
                     MessageBox.Show("Цена не может быть меньше 0 или больше 200000", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -54,10 +53,10 @@ namespace Курсовой_проект
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            int Id = Convert.ToInt32(textBox4.Text);
             try
             {
-                string query = "DELETE FROM phones WHERE Id = " + Id;//удаление строки данных
+                int Id = Convert.ToInt32(textBox4.Text);
+                string query = "DELETE FROM phones WHERE Id = " + Id; //удаление строки данных
                 OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
                 command.ExecuteNonQuery();
                 MessageBox.Show("Телефон удален ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,10 +70,12 @@ namespace Курсовой_проект
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            int Id = Convert.ToInt32(textBox5.Text);
-            int Price = Convert.ToInt32(textBox6.Text);
+           
+            
             try
             {
+                int Id = Convert.ToInt32(textBox5.Text);
+                int Price = Convert.ToInt32(textBox6.Text);
                 if ((Price <= 0) || (Price > 200000))//проверека того что минимальная цена меньше максимальной 
                 {
                     MessageBox.Show("Цена не может быть меньше 0 или больше 200000", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -90,7 +91,7 @@ namespace Курсовой_проект
             }
             catch
             {
-                MessageBox.Show("Проверьте заполнение полей Id для изменения или ввода цен автомобиля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Проверьте заполнение полей Id для изменения или ввода цены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             textBox5.Text = "";
@@ -136,8 +137,19 @@ namespace Курсовой_проект
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            textBox2.Text = rx.Replace(textBox2.Text, "");
             textBox2.MaxLength = 6;//максимальная длина числа в поле
+            try
+            {
+                int value = Convert.ToInt32(textBox2.Text);
+                if (value > 200000)
+                {
+                    textBox2.Text = "200000";
+                }
+            }
+            catch
+            {
+                textBox2.Text = rx.Replace(textBox2.Text, "");
+            }
         }
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
@@ -151,8 +163,45 @@ namespace Курсовой_проект
         }
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            textBox6.Text = rx.Replace(textBox6.Text, "");
             textBox6.MaxLength = 6;//максимальная длина числа в поле
+            try
+            {
+                int value = Convert.ToInt32(textBox6.Text);
+                if (value > 200000)
+                {
+                    textBox6.Text = "200000";
+                }
+            }
+            catch
+            {
+                textBox6.Text = rx.Replace(textBox6.Text, "");
+            }
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.phonesTableAdapter.FillBy(this.telephoneDataSet.phones);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.phonesTableAdapter.FillBy1(this.telephoneDataSet.phones);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

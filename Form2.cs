@@ -18,8 +18,8 @@ namespace Курсовой_проект
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = null;//обьявление переменой для запроса
-            string brand = null;
+            string query = null;//объявление переменой для запроса
+            string brand = null;//объявление переменных для запроса
             string Diagonal = null;
             string Memory = null;
             string ScreenType = null;
@@ -36,7 +36,7 @@ namespace Курсовой_проект
 
             try
             {
-                if (trackBar1.Value >= 0 && trackBar2.Value <= 200000)
+                if (trackBar1.Value >= 0 && trackBar2.Value <= 200000)//проверка для цены
                 {
                     PriceMin = Convert.ToString(trackBar1.Value);
                     PriceMax = Convert.ToString(trackBar2.Value);
@@ -49,31 +49,27 @@ namespace Курсовой_проект
                 if (radioButton4.Checked == true)//диагональ экрана
                 {
                     Diagonal = "5.6-6.1";
-
                 }
                 else if (radioButton5.Checked == true)
                 {
                     Diagonal = "6.2-6.5";
-
                 }
                 else if (radioButton6.Checked == true)
                 {
                     Diagonal = ">6.6";
                 };
+
                 if (radioButton1.Checked == true)//размер памяти
                 {
                     Memory = "32";
-
                 }
                 else if (radioButton2.Checked == true)
                 {
                     Memory = "64";
-
                 }
                 else if (radioButton3.Checked == true)
                 {
                     Memory = "128";
-
                 }
                 else if (radioButton7.Checked == true)
                 {
@@ -101,7 +97,6 @@ namespace Курсовой_проект
                 else if (radioButton12.Checked == true)
                 {
                     ScreenType = "AMOLED";
-
                 };
 
                 if (radioButton13.Checked == true)//блок проверки выбора бренда и выбора ответа во всех вопросах
@@ -146,8 +141,7 @@ namespace Курсовой_проект
 
                 if (reader.HasRows == false) // блок проверки результата если он отсутствует то выводится сообщением об этом
                 {
-                    MessageBox.Show("Подходящий автомобиль отсутствует в базе данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    MessageBox.Show("Подходящий телефон отсутствует в базе данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

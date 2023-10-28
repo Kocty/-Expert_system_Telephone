@@ -44,7 +44,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 38);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "admin";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
@@ -55,7 +54,6 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(100, 38);
             this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "12345";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
