@@ -23,15 +23,16 @@ namespace Курсовой_проект
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            string NamePhone = textBox1.Text;
             string Brand = comboBox1.Text;//объявление переменных
             string Diagonal = comboBox2.Text;
             string Memory = comboBox3.Text;
             string ScreenType = comboBox4.Text;
+            int Price = Convert.ToInt32(textBox2.Text);
             try
             {
-                string NamePhone = textBox1.Text;
-                int Price = Convert.ToInt32(textBox2.Text);
-                if ((Price <= 0) || (Price > 200000))//проверека того что минимальная цена меньше максимальной 
+                
+                if ((Price <= 0) || (Price > 200000))//проверка того что минимальная цена меньше максимальной 
                 {
                     MessageBox.Show("Цена не может быть меньше 0 или больше 200000", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -70,8 +71,6 @@ namespace Курсовой_проект
         }
         private void button5_Click(object sender, EventArgs e)
         {
-           
-            
             try
             {
                 int Id = Convert.ToInt32(textBox5.Text);
@@ -176,32 +175,6 @@ namespace Курсовой_проект
             {
                 textBox6.Text = rx.Replace(textBox6.Text, "");
             }
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.phonesTableAdapter.FillBy(this.telephoneDataSet.phones);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.phonesTableAdapter.FillBy1(this.telephoneDataSet.phones);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
         }
     }
 }

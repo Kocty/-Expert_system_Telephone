@@ -2960,8 +2960,8 @@ namespace Курсовой_проект.TelephoneDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price\r\nFR" +
-                "OM            phones\r\nORDER BY Id";
+            this._commandCollection[1].CommandText = "SELECT Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price FROM phone" +
+                "s ORDER BY Id";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;

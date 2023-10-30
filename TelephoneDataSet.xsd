@@ -136,9 +136,7 @@
               <DbSource ConnectionRef="TelephoneConnectionString (Settings)" DbObjectName="phones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price
-FROM            phones
-ORDER BY Id</CommandText>
+                    <CommandText>SELECT Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price FROM phones ORDER BY Id</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -352,7 +350,7 @@ ORDER BY Id</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Price" msprop:Generator_UserColumnName="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_UserColumnName="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -384,11 +382,11 @@ ORDER BY Id</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Memorys" msprop:Generator_RowClassName="MemorysRow" msprop:Generator_RowEvHandlerName="MemorysRowChangeEventHandler" msprop:Generator_RowDeletedName="MemorysRowDeleted" msprop:Generator_RowDeletingName="MemorysRowDeleting" msprop:Generator_RowEvArgName="MemorysRowChangeEvent" msprop:Generator_TablePropName="Memorys" msprop:Generator_RowChangedName="MemorysRowChanged" msprop:Generator_UserTableName="Memorys" msprop:Generator_RowChangingName="MemorysRowChanging" msprop:Generator_TableClassName="MemorysDataTable" msprop:Generator_TableVarName="tableMemorys">
+        <xs:element name="Memorys" msprop:Generator_RowEvHandlerName="MemorysRowChangeEventHandler" msprop:Generator_RowDeletedName="MemorysRowDeleted" msprop:Generator_RowDeletingName="MemorysRowDeleting" msprop:Generator_RowEvArgName="MemorysRowChangeEvent" msprop:Generator_TablePropName="Memorys" msprop:Generator_RowChangedName="MemorysRowChanged" msprop:Generator_UserTableName="Memorys" msprop:Generator_RowChangingName="MemorysRowChanging" msprop:Generator_RowClassName="MemorysRow" msprop:Generator_TableClassName="MemorysDataTable" msprop:Generator_TableVarName="tableMemorys">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
-              <xs:element name="Memory" msprop:Generator_UserColumnName="Memory" msprop:Generator_ColumnPropNameInTable="MemoryColumn" msprop:Generator_ColumnPropNameInRow="Memory" msprop:Generator_ColumnVarNameInTable="columnMemory" minOccurs="0">
+              <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
+              <xs:element name="Memory" msprop:Generator_ColumnPropNameInTable="MemoryColumn" msprop:Generator_ColumnPropNameInRow="Memory" msprop:Generator_UserColumnName="Memory" msprop:Generator_ColumnVarNameInTable="columnMemory" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
