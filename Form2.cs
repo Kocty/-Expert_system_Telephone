@@ -33,6 +33,7 @@ namespace Курсовой_проект
             textBox4.Text = "";
             textBox7.Text = "";
             textBox8.Text = "";
+            pictureBox1.Image = null;
 
             try
             {
@@ -265,7 +266,9 @@ namespace Курсовой_проект
                     textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                     textBox7.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                     textBox8.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString() + " ₽";// добавляем в конце строки знак рубля(правый alt + 8)
+                    pictureBox1.ImageLocation = @"foto\" + textBox1.Text + ".jpg";
                 }
+                
             }
             catch
             {
