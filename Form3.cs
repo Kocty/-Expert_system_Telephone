@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;//библиотека для регулярных выражений
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Курсовой_проект
 {
@@ -28,16 +32,17 @@ namespace Курсовой_проект
             string Diagonal = comboBox2.Text;
             string Memory = comboBox3.Text;
             string ScreenType = comboBox4.Text;
-            int Price = Convert.ToInt32(textBox2.Text);
+            
             try
             {
-                
+                int Price = Convert.ToInt32(textBox2.Text);
                 if ((Price <= 0) || (Price > 200000))//проверка того что минимальная цена меньше максимальной 
                 {
                     MessageBox.Show("Цена не может быть меньше 0 или больше 200000", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else //запрос на добавление данных
                 {
+                    pictureBox1.Image.Save(@"foto\" + textBox1.Text + ".png", ImageFormat.Png);
                     query = "INSERT INTO phones (NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price) VALUES ('" + NamePhone + "','" + Brand + "','" + Diagonal + "','" + Memory + "','" + ScreenType + "','" + Price.ToString() + "')";
                     OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
                     command.ExecuteNonQuery();//возвращение затронутых строк
@@ -47,10 +52,12 @@ namespace Курсовой_проект
             }
             catch
             {
-                MessageBox.Show("Проверьте заполнение всех полей ввода или такой автомобиль уже существует в базе данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Проверьте выбор изображения и  заполнение всех полей ввода или такой автомобиль уже существует в базе данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             textBox1.Text = "";//очистка полей ввода после выполнения запроса
             textBox2.Text = "";
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = true;
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -175,6 +182,33 @@ namespace Курсовой_проект
             {
                 textBox6.Text = rx.Replace(textBox6.Text, "");
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = true;
+           
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                DialogResult dr = openFileDialog.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    Image file = Image.FromFile(openFileDialog.FileName);
+                    pictureBox1.Image = file;
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            pictureBox2.Visible = false;
         }
     }
 }

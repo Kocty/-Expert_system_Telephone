@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Data.OleDb;//библиотека для работы с запросами для бд
 using System.Text.RegularExpressions;//библиотека для регулярных выражений
+using System.Drawing;
 
 namespace Курсовой_проект
 {
@@ -253,6 +254,7 @@ namespace Курсовой_проект
             textBox5.Text = "5000";
             textBox6.Text = "10000";
             dataGridView1.Rows.Clear();
+            pictureBox1.Image = null; 
         }
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)/*проверка на наличие записи при нажатии на строку в таблице, если отсутствует то выводит сообщение об этом*/
         {
@@ -266,7 +268,19 @@ namespace Курсовой_проект
                     textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                     textBox7.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                     textBox8.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString() + " ₽";// добавляем в конце строки знак рубля(правый alt + 8)
-                    pictureBox1.ImageLocation = @"foto\" + textBox1.Text + ".jpg";
+                    pictureBox1.ImageLocation = @"foto\NULL2.jpg";
+                    
+                    if (pictureBox1.ImageLocation != null)
+                    {
+                        pictureBox1.ImageLocation = @"foto\" + textBox1.Text + ".jpg";
+                    }
+                    //else
+                    //{
+                    //    Color backColor = Color.Black;
+                    //    pictureBox1.BackColor = backColor;
+                        
+                        
+                    //}
                 }
                 
             }
