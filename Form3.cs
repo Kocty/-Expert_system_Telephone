@@ -6,6 +6,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace Курсовой_проект
 {
@@ -25,10 +26,10 @@ namespace Курсовой_проект
             comboBox3.SelectedItem = "64";
             comboBox4.SelectedItem = "AMOLED";
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//добавление данных
         {
-            string NamePhone = textBox1.Text;
-            string Brand = comboBox1.Text;//объявление переменных
+            string NamePhone = textBox1.Text;//объявление переменных
+            string Brand = comboBox1.Text;
             string Diagonal = comboBox2.Text;
             string Memory = comboBox3.Text;
             string ScreenType = comboBox4.Text;
@@ -42,7 +43,7 @@ namespace Курсовой_проект
                 }
                 else //запрос на добавление данных
                 {
-                    pictureBox1.Image.Save(@"foto\" + textBox1.Text + ".png", ImageFormat.Png);
+                    pictureBox1.Image.Save(@"foto\" + textBox1.Text + ".png", ImageFormat.Png);//сохранение фото
                     query = "INSERT INTO phones (NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price) VALUES ('" + NamePhone + "','" + Brand + "','" + Diagonal + "','" + Memory + "','" + ScreenType + "','" + Price.ToString() + "')";
                     OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
                     command.ExecuteNonQuery();//возвращение затронутых строк
@@ -56,19 +57,35 @@ namespace Курсовой_проект
             }
             textBox1.Text = "";//очистка полей ввода после выполнения запроса
             textBox2.Text = "";
+            pictureBox1.Image = null;
             pictureBox1.Visible = false;
             pictureBox2.Visible = true;
         }
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)//удаление данных
         {
             try
             {
                 int Id = Convert.ToInt32(textBox4.Text);
-                string query = "DELETE FROM phones WHERE Id = " + Id; //удаление строки данных
+                string query = "SELECT NamePhone FROM phones WHERE Id = " + Id;//запрос для получения название телефона по Id
                 OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
-                command.ExecuteNonQuery();
-                MessageBox.Show("Телефон удален ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+                OleDbDataReader reader = command.ExecuteReader();//получение данных из бд
+
+                if (reader.HasRows == false) // проверка существует ли данная запись
+                {
+                    MessageBox.Show("Подходящий телефон отсутствует в базе данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    while (reader.Read())//чтение названия телефона
+                    {
+                        File.Delete(@"foto\" + reader.GetString(0) + ".png");//удаление фото
+                        query = "DELETE FROM phones WHERE Id = " + Id; //удаление строки данных
+                        command = new OleDbCommand(query, myConnection);//выполнение запроса
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Телефон удален ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+                    }
+                }
             }
             catch
             {
@@ -76,32 +93,70 @@ namespace Курсовой_проект
             }
             textBox4.Text = "";
         }
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)//изменение данных
         {
             try
             {
                 int Id = Convert.ToInt32(textBox5.Text);
                 int Price = Convert.ToInt32(textBox6.Text);
-                if ((Price <= 0) || (Price > 200000))//проверека того что минимальная цена меньше максимальной 
+
+                string query = "SELECT NamePhone FROM phones WHERE Id = " + Id;//запрос для получения название телефона по Id
+                OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
+                OleDbDataReader reader = command.ExecuteReader();//получение данных из бд
+
+                if (reader.HasRows == false) // проверка существует ли данная запись
                 {
-                    MessageBox.Show("Цена не может быть меньше 0 или больше 200000", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Подходящий телефон отсутствует в базе данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                {
-                    string query = "UPDATE phones SET Price ='" + Price + "' WHERE Id=" + Id;//изменение данных в определенной строке
-                    OleDbCommand command = new OleDbCommand(query, myConnection);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Данные изменены ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+                { 
+                    if ((Price <= 0) || (Price > 200000))//проверка того что минимальная цена меньше максимальной 
+                    {
+                        MessageBox.Show("Цена не может быть меньше 0 или больше 200000", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        while (reader.Read())//чтение названия телефона    
+                        {
+                            if(checkBox1.Checked == true)//проверка флажка для изменения фото
+                            {
+                                if(pictureBox1.Image != null)//проверка что выбрано новое фото
+                                {
+                                    File.Delete(@"foto\" + reader.GetString(0) + ".png");//удаление фото
+                                    pictureBox1.Image.Save(@"foto\" + reader.GetString(0) + ".png", ImageFormat.Png);//сохранение нового фото 
+                                    query = "UPDATE phones SET Price ='" + Price + "' WHERE Id=" + Id;//изменение данных в определенной строке
+                                    command = new OleDbCommand(query, myConnection);
+                                    command.ExecuteNonQuery();
+                                    MessageBox.Show("Данные изменены ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+                                }
+                                else {MessageBox.Show("Новое изображение не выбрано", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                
+                            }
+                            else
+                            {
+                                query = "UPDATE phones SET Price ='" + Price + "' WHERE Id=" + Id;//изменение данных в определенной строке
+                                command = new OleDbCommand(query, myConnection);
+                                command.ExecuteNonQuery();
+
+                                MessageBox.Show("Данные изменены ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+                            }
+                        }
+                    }
                 }
             }
             catch
             {
                 MessageBox.Show("Проверьте заполнение полей Id для изменения или ввода цены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             textBox5.Text = "";
             textBox6.Text = "";
+            pictureBox1.Image = null;
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = true;
+            checkBox1.Checked = false;
         }
         private void Settings_Load(object sender, EventArgs e)
         {
@@ -189,26 +244,24 @@ namespace Курсовой_проект
             
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)//при нажатии
         {
-            pictureBox1.Visible = true;
-           
+            pictureBox1.Visible = true;//отображает pictureBox1 который находится под pictureBox2
             try
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
+                OpenFileDialog openFileDialog = new OpenFileDialog();//диалог для выбора фотографии
                 DialogResult dr = openFileDialog.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
                     Image file = Image.FromFile(openFileDialog.FileName);
-                    pictureBox1.Image = file;
+                    pictureBox1.Image = file;//установка фото в pictureBox1
                 }
-
             }
             catch
             {
                 MessageBox.Show("Ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            pictureBox2.Visible = false;
+            pictureBox2.Visible = false;//скрывает pictureBox2 
         }
     }
 }

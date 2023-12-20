@@ -274,13 +274,6 @@ namespace Курсовой_проект
                     {
                         pictureBox1.ImageLocation = @"foto\" + textBox1.Text + ".jpg";
                     }
-                    //else
-                    //{
-                    //    Color backColor = Color.Black;
-                    //    pictureBox1.BackColor = backColor;
-                        
-                        
-                    //}
                 }
                 
             }
