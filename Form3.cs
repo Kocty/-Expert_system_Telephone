@@ -241,7 +241,9 @@ namespace Курсовой_проект
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+            pictureBox1.Image = null;
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = true;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)//при нажатии
@@ -255,13 +257,14 @@ namespace Курсовой_проект
                 {
                     Image file = Image.FromFile(openFileDialog.FileName);
                     pictureBox1.Image = file;//установка фото в pictureBox1
+                    pictureBox2.Visible = false;//скрывает pictureBox2 
                 }
             }
             catch
             {
                 MessageBox.Show("Ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            pictureBox2.Visible = false;//скрывает pictureBox2 
+            
         }
     }
 }
