@@ -709,6 +709,8 @@ namespace Курсовой_проект {
             
             private global::System.Data.DataColumn columnPrice;
             
+            private global::System.Data.DataColumn columnColor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public phonesDataTable() {
@@ -800,6 +802,14 @@ namespace Курсовой_проект {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ColorColumn {
+                get {
+                    return this.columnColor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -835,7 +845,7 @@ namespace Курсовой_проект {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public phonesRow AddphonesRow(string NamePhone, string Brand, string ScreenDiagonal, string Memory, string ScreenType, decimal Price) {
+            public phonesRow AddphonesRow(string NamePhone, string Brand, string ScreenDiagonal, string Memory, string ScreenType, decimal Price, string Color) {
                 phonesRow rowphonesRow = ((phonesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -844,7 +854,8 @@ namespace Курсовой_проект {
                         ScreenDiagonal,
                         Memory,
                         ScreenType,
-                        Price};
+                        Price,
+                        Color};
                 rowphonesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowphonesRow);
                 return rowphonesRow;
@@ -881,6 +892,7 @@ namespace Курсовой_проект {
                 this.columnMemory = base.Columns["Memory"];
                 this.columnScreenType = base.Columns["ScreenType"];
                 this.columnPrice = base.Columns["Price"];
+                this.columnColor = base.Columns["Color"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -900,6 +912,8 @@ namespace Курсовой_проект {
                 base.Columns.Add(this.columnScreenType);
                 this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrice);
+                this.columnColor = new global::System.Data.DataColumn("Color", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -912,6 +926,7 @@ namespace Курсовой_проект {
                 this.columnScreenDiagonal.MaxLength = 15;
                 this.columnMemory.MaxLength = 15;
                 this.columnScreenType.MaxLength = 30;
+                this.columnColor.MaxLength = 536870910;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2043,6 +2058,22 @@ namespace Курсовой_проект {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Color {
+                get {
+                    try {
+                        return ((string)(this[this.tablephones.ColorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Color\' в таблице \'phones\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablephones.ColorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNamePhoneNull() {
                 return this.IsNull(this.tablephones.NamePhoneColumn);
             }
@@ -2111,6 +2142,18 @@ namespace Курсовой_проект {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPriceNull() {
                 this[this.tablephones.PriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsColorNull() {
+                return this.IsNull(this.tablephones.ColorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetColorNull() {
+                this[this.tablephones.ColorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2888,6 +2931,7 @@ namespace Курсовой_проект.TelephoneDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Memory", "Memory");
             tableMapping.ColumnMappings.Add("ScreenType", "ScreenType");
             tableMapping.ColumnMappings.Add("Price", "Price");
+            tableMapping.ColumnMappings.Add("Color", "Color");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2909,7 +2953,7 @@ namespace Курсовой_проект.TelephoneDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `phones` (`NamePhone`, `Brand`, `ScreenDiagonal`, `Memory`, `ScreenTy" +
-                "pe`, `Price`) VALUES (?, ?, ?, ?, ?, ?)";
+                "pe`, `Price`, `Color`) VALUES (?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NamePhone", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NamePhone", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Brand", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Brand", global::System.Data.DataRowVersion.Current, false, null));
@@ -2917,6 +2961,7 @@ namespace Курсовой_проект.TelephoneDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Memory", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Memory", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ScreenType", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ScreenType", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Price", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Price", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Color", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Color", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE `phones` SET `NamePhone` = ?, `Brand` = ?, `ScreenDiagonal` = ?, `Memory` = ?, `ScreenType` = ?, `Price` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `NamePhone` IS NULL) OR (`NamePhone` = ?)) AND ((? = 1 AND `Brand` IS NULL) OR (`Brand` = ?)) AND ((? = 1 AND `ScreenDiagonal` IS NULL) OR (`ScreenDiagonal` = ?)) AND ((? = 1 AND `Memory` IS NULL) OR (`Memory` = ?)) AND ((? = 1 AND `ScreenType` IS NULL) OR (`ScreenType` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)))";
@@ -2955,18 +3000,18 @@ namespace Курсовой_проект.TelephoneDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price FROM phone" +
-                "s";
+            this._commandCollection[0].CommandText = "SELECT Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price, Color FRO" +
+                "M phones";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price FROM phone" +
-                "s ORDER BY Id";
+            this._commandCollection[1].CommandText = "SELECT Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price, Color FRO" +
+                "M phones ORDER BY Id";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price FROM phone" +
-                "s";
+            this._commandCollection[2].CommandText = "SELECT Id, NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price, Color FRO" +
+                "M phones";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3112,7 +3157,7 @@ namespace Курсовой_проект.TelephoneDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NamePhone, string Brand, string ScreenDiagonal, string Memory, string ScreenType, decimal Price) {
+        public virtual int Insert(string NamePhone, string Brand, string ScreenDiagonal, string Memory, string ScreenType, decimal Price, string Color) {
             if ((NamePhone == null)) {
                 throw new global::System.ArgumentNullException("NamePhone");
             }
@@ -3144,6 +3189,12 @@ namespace Курсовой_проект.TelephoneDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ScreenType));
             }
             this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(Price));
+            if ((Color == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Color));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -149,7 +149,7 @@ namespace Курсовой_проект
                 {
                     while (reader.Read())//запись значений в столбцы таблицы    
                     {
-                        dataGridView1.Rows.Add(reader["NamePhone"], reader["Brand"], reader["ScreenDiagonal"], reader["Memory"], reader["ScreenType"], reader["Price"]);
+                        dataGridView1.Rows.Add(reader["NamePhone"], reader["Brand"], reader["ScreenDiagonal"], reader["Memory"], reader["ScreenType"], reader["Price"], reader["Color"]);
                     }
                 }
                 this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
@@ -217,6 +217,13 @@ namespace Курсовой_проект
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "telephoneDataSet.phones". При необходимости она может быть перемещена или удалена.
             this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+
+            ToolTip toolTip = new ToolTip();//всплывающие подсказки 
+            toolTip.IsBalloon = true;
+            toolTip.AutomaticDelay = 1000;
+            toolTip.SetToolTip(radioButton10, "Дешевые матрицы для бюджетных телефонов с низкой контрастностью и яркостью ");
+            toolTip.SetToolTip(radioButton11, "Матрицы для телефонов средней ценовой категории с хорошей передачей цвета и временем отклика ");
+            toolTip.SetToolTip(radioButton12, "Современные матрицы с отличной контрастностью, работой с глубиной черного цвета и яркостью");
         }
         private void Test_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -268,6 +275,7 @@ namespace Курсовой_проект
                     textBox4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                     textBox7.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                     textBox8.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString() + " ₽";// добавляем в конце строки знак рубля(правый alt + 8)
+                    textBox9.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                     pictureBox1.ImageLocation = @"foto\NULL2.jpg";
                     
                     if (pictureBox1.ImageLocation != null)

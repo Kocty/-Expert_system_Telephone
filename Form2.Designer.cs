@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -77,17 +78,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NamePhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScreenDiagonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Memory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScreenType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
-            this.telephoneDataSet = new Курсовой_проект.TelephoneDataSet();
-            this.phonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phonesTableAdapter = new Курсовой_проект.TelephoneDataSetTableAdapters.phonesTableAdapter();
-            this.tableAdapterManager = new Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -97,6 +88,19 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.NamePhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScreenDiagonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Memory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScreenType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.telephoneDataSet = new Курсовой_проект.TelephoneDataSet();
+            this.phonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phonesTableAdapter = new Курсовой_проект.TelephoneDataSetTableAdapters.phonesTableAdapter();
+            this.tableAdapterManager = new Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -105,9 +109,9 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phonesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -576,7 +580,8 @@
             this.ScreenDiagonal,
             this.Memory,
             this.ScreenType,
-            this.PriceMin});
+            this.PriceMin,
+            this.Color});
             this.dataGridView1.Location = new System.Drawing.Point(806, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -584,71 +589,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(538, 220);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
-            // 
-            // NamePhone
-            // 
-            this.NamePhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NamePhone.DefaultCellStyle = dataGridViewCellStyle19;
-            this.NamePhone.FillWeight = 110F;
-            this.NamePhone.HeaderText = "NamePhone";
-            this.NamePhone.MinimumWidth = 15;
-            this.NamePhone.Name = "NamePhone";
-            this.NamePhone.ReadOnly = true;
-            this.NamePhone.Width = 89;
-            // 
-            // Brand
-            // 
-            this.Brand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Brand.DefaultCellStyle = dataGridViewCellStyle20;
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            this.Brand.ReadOnly = true;
-            this.Brand.Width = 59;
-            // 
-            // ScreenDiagonal
-            // 
-            this.ScreenDiagonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ScreenDiagonal.DefaultCellStyle = dataGridViewCellStyle21;
-            this.ScreenDiagonal.FillWeight = 110F;
-            this.ScreenDiagonal.HeaderText = "ScreenDiagonal";
-            this.ScreenDiagonal.Name = "ScreenDiagonal";
-            this.ScreenDiagonal.ReadOnly = true;
-            this.ScreenDiagonal.Width = 103;
-            // 
-            // Memory
-            // 
-            this.Memory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Memory.DefaultCellStyle = dataGridViewCellStyle22;
-            this.Memory.HeaderText = "Memory";
-            this.Memory.Name = "Memory";
-            this.Memory.ReadOnly = true;
-            this.Memory.Width = 72;
-            // 
-            // ScreenType
-            // 
-            this.ScreenType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ScreenType.DefaultCellStyle = dataGridViewCellStyle23;
-            this.ScreenType.HeaderText = "ScreenType";
-            this.ScreenType.Name = "ScreenType";
-            this.ScreenType.ReadOnly = true;
-            this.ScreenType.Width = 86;
-            // 
-            // PriceMin
-            // 
-            this.PriceMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle24.Format = "C0";
-            dataGridViewCellStyle24.NullValue = null;
-            this.PriceMin.DefaultCellStyle = dataGridViewCellStyle24;
-            this.PriceMin.HeaderText = "Price";
-            this.PriceMin.Name = "PriceMin";
-            this.PriceMin.ReadOnly = true;
-            this.PriceMin.Width = 56;
             // 
             // button4
             // 
@@ -660,30 +600,6 @@
             this.button4.Text = "ИНСТРУКЦИЯ";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // telephoneDataSet
-            // 
-            this.telephoneDataSet.DataSetName = "TelephoneDataSet";
-            this.telephoneDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // phonesBindingSource
-            // 
-            this.phonesBindingSource.DataMember = "phones";
-            this.phonesBindingSource.DataSource = this.telephoneDataSet;
-            // 
-            // phonesTableAdapter
-            // 
-            this.phonesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BrandsTableAdapter = null;
-            this.tableAdapterManager.MemorysTableAdapter = null;
-            this.tableAdapterManager.phonesTableAdapter = this.phonesTableAdapter;
-            this.tableAdapterManager.ScreenDiagonalTableAdapter = null;
-            this.tableAdapterManager.ScreenTypeTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // label12
             // 
@@ -766,12 +682,131 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox1.ErrorImage = global::Курсовой_проект.Properties.Resources.NULL2;
             this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(1088, 238);
+            this.pictureBox1.Location = new System.Drawing.Point(1088, 344);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 340);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
+            // 
+            // NamePhone
+            // 
+            this.NamePhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NamePhone.DefaultCellStyle = dataGridViewCellStyle15;
+            this.NamePhone.FillWeight = 110F;
+            this.NamePhone.HeaderText = "NamePhone";
+            this.NamePhone.MinimumWidth = 15;
+            this.NamePhone.Name = "NamePhone";
+            this.NamePhone.ReadOnly = true;
+            this.NamePhone.Width = 89;
+            // 
+            // Brand
+            // 
+            this.Brand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Brand.DefaultCellStyle = dataGridViewCellStyle16;
+            this.Brand.HeaderText = "Brand";
+            this.Brand.Name = "Brand";
+            this.Brand.ReadOnly = true;
+            this.Brand.Width = 59;
+            // 
+            // ScreenDiagonal
+            // 
+            this.ScreenDiagonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScreenDiagonal.DefaultCellStyle = dataGridViewCellStyle17;
+            this.ScreenDiagonal.FillWeight = 110F;
+            this.ScreenDiagonal.HeaderText = "ScreenDiagonal";
+            this.ScreenDiagonal.Name = "ScreenDiagonal";
+            this.ScreenDiagonal.ReadOnly = true;
+            this.ScreenDiagonal.Width = 103;
+            // 
+            // Memory
+            // 
+            this.Memory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Memory.DefaultCellStyle = dataGridViewCellStyle18;
+            this.Memory.HeaderText = "Memory";
+            this.Memory.Name = "Memory";
+            this.Memory.ReadOnly = true;
+            this.Memory.Width = 72;
+            // 
+            // ScreenType
+            // 
+            this.ScreenType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScreenType.DefaultCellStyle = dataGridViewCellStyle19;
+            this.ScreenType.HeaderText = "ScreenType";
+            this.ScreenType.Name = "ScreenType";
+            this.ScreenType.ReadOnly = true;
+            this.ScreenType.Width = 86;
+            // 
+            // PriceMin
+            // 
+            this.PriceMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle20.Format = "C0";
+            dataGridViewCellStyle20.NullValue = null;
+            this.PriceMin.DefaultCellStyle = dataGridViewCellStyle20;
+            this.PriceMin.HeaderText = "Price";
+            this.PriceMin.Name = "PriceMin";
+            this.PriceMin.ReadOnly = true;
+            this.PriceMin.Width = 56;
+            // 
+            // Color
+            // 
+            this.Color.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Color.DefaultCellStyle = dataGridViewCellStyle21;
+            this.Color.HeaderText = "Color";
+            this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
+            this.Color.Width = 58;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox9.Location = new System.Drawing.Point(1088, 270);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(256, 69);
+            this.textBox9.TabIndex = 32;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(1082, 236);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(69, 31);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Цвет";
+            // 
+            // telephoneDataSet
+            // 
+            this.telephoneDataSet.DataSetName = "TelephoneDataSet";
+            this.telephoneDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // phonesBindingSource
+            // 
+            this.phonesBindingSource.DataMember = "phones";
+            this.phonesBindingSource.DataSource = this.telephoneDataSet;
+            // 
+            // phonesTableAdapter
+            // 
+            this.phonesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BrandsTableAdapter = null;
+            this.tableAdapterManager.MemorysTableAdapter = null;
+            this.tableAdapterManager.phonesTableAdapter = this.phonesTableAdapter;
+            this.tableAdapterManager.ScreenDiagonalTableAdapter = null;
+            this.tableAdapterManager.ScreenTypeTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Курсовой_проект.TelephoneDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // Test
             // 
@@ -779,6 +814,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1349, 691);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBox9);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox8);
@@ -823,9 +860,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phonesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -877,12 +914,6 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NamePhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ScreenDiagonal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Memory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ScreenType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PriceMin;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -895,5 +926,14 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamePhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ScreenDiagonal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Memory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ScreenType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceMin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label14;
     }
 }

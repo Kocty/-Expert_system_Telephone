@@ -33,6 +33,7 @@ namespace Курсовой_проект
             string Diagonal = comboBox2.Text;
             string Memory = comboBox3.Text;
             string ScreenType = comboBox4.Text;
+            string Color = textBox3.Text;
             
             try
             {
@@ -43,10 +44,11 @@ namespace Курсовой_проект
                 }
                 else //запрос на добавление данных
                 {
-                    pictureBox1.Image.Save(@"foto\" + textBox1.Text + ".png", ImageFormat.Png);//сохранение фото
-                    query = "INSERT INTO phones (NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price) VALUES ('" + NamePhone + "','" + Brand + "','" + Diagonal + "','" + Memory + "','" + ScreenType + "','" + Price.ToString() + "')";
+                    
+                    query = "INSERT INTO phones (NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price, Color) VALUES ('" + NamePhone + "','" + Brand + "','" + Diagonal + "','" + Memory + "','" + ScreenType + "','" + Price.ToString() + "' ,'" + Color + "')";//
                     OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
                     command.ExecuteNonQuery();//возвращение затронутых строк
+                    pictureBox1.Image.Save(@"foto\" + textBox1.Text + ".png", ImageFormat.Png);//сохранение фото
                     MessageBox.Show("Телефон добавлен ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
                 }
