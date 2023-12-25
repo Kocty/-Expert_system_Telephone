@@ -19,7 +19,7 @@ namespace Курсовой_проект
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = null;//объявление переменой для запроса
+            string query = null;//объявление переменой запроса
             string brand = null;//объявление переменных для запроса
             string Diagonal = null;
             string Memory = null;
@@ -280,7 +280,7 @@ namespace Курсовой_проект
                     
                     if (pictureBox1.ImageLocation != null)
                     {
-                        pictureBox1.ImageLocation = @"foto\" + textBox1.Text + ".jpg";
+                        pictureBox1.ImageLocation = @"foto\" + textBox1.Text + ".png";
                     }
                 }
                 
@@ -293,6 +293,80 @@ namespace Курсовой_проект
         private void button4_Click(object sender, EventArgs e)//инструкция для прохождения теста
         {
             MessageBox.Show("Для прохождения теста выбирайте по одному варианту ответа на вопрос, после выбора всех ответов нажмите кнопку 'ПОДОБРАТЬ Телефон' подходящие телефоны появятся в табличке в правом верхнем углу, вы можете нажимать на подходящие варианты и получать информацию в полях под таблицей. ", "Как проходить тест", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string query = null;//объявление переменой запроса
+            string brand = null;//объявление переменных для запроса
+
+            dataGridView1.Rows.Clear();//очистка таблицы и полей вывода
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            pictureBox1.Image = null;
+
+            try
+            {
+                if (radioButton13.Checked == true)//блок проверки выбора бренда и выбора ответа во всех вопросах
+                {
+                    brand = "Apple";
+                }
+                else if (radioButton14.Checked == true)
+                {
+                    brand = "Xiaomi";
+                }
+                else if (radioButton15.Checked == true)
+                {
+                    brand = "Samsung";
+                }
+                else if (radioButton16.Checked == true)
+                {
+                    brand = "Honor";
+                }
+                else if (radioButton17.Checked == true)
+                {
+                    brand = "Oppo";
+                }
+                else if (radioButton18.Checked == true)
+                {
+                    brand = "No"; //без бренда
+                };
+
+                if (radioButton13.Checked == true || radioButton14.Checked == true || radioButton15.Checked == true || radioButton16.Checked == true || radioButton17.Checked == true || radioButton18.Checked == true)
+                {
+                    if (brand == "No")
+                    {
+                        MessageBox.Show("Выберите другой вариант ", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM phones WHERE Brand ='" + brand + "' ";
+                        OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
+                        OleDbDataReader reader = command.ExecuteReader();//получение данных из бд
+
+                        if (reader.HasRows == false) // блок проверки результата если он отсутствует то выводится сообщением об этом
+                        {
+                            MessageBox.Show("Подходящий телефон отсутствует в базе данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            while (reader.Read())//запись значений в столбцы таблицы    
+                            {
+                                dataGridView1.Rows.Add(reader["NamePhone"], reader["Brand"], reader["ScreenDiagonal"], reader["Memory"], reader["ScreenType"], reader["Price"], reader["Color"]);
+                            }
+                        }
+                        this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Выберите вариант бренда", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
