@@ -658,6 +658,7 @@
             this.Color.Name = "Color";
             this.Color.ReadOnly = true;
             this.Color.Visible = false;
+            this.Color.Width = 56;
             // 
             // Link
             // 
@@ -668,6 +669,7 @@
             this.Link.Name = "Link";
             this.Link.ReadOnly = true;
             this.Link.Visible = false;
+            this.Link.Width = 52;
             // 
             // button4
             // 
@@ -760,7 +762,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox1.ErrorImage = global::Курсовой_проект.Properties.Resources.NULL2;
-            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.ImageLocation = "foto\\NULL2.jpg";
             this.pictureBox1.Location = new System.Drawing.Point(1068, 239);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(276, 445);
@@ -804,7 +806,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox2.ErrorImage = global::Курсовой_проект.Properties.Resources.NULL2;
-            this.pictureBox2.ImageLocation = "";
+            this.pictureBox2.ImageLocation = "foto\\NULL2.5.jpg";
             this.pictureBox2.Location = new System.Drawing.Point(1068, 239);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(276, 445);

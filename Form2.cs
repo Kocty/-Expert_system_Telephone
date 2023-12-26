@@ -36,8 +36,11 @@ namespace Курсовой_проект
             textBox4.Text = "";
             textBox7.Text = "";
             textBox8.Text = "";
+            textBox9.Text = "";
             pictureBox1.Image = null;
             pictureBox2.Image = null;
+            pictureBox1.ImageLocation = @"foto\NULL2.jpg";
+            pictureBox2.ImageLocation = @"foto\NULL2.5.jpg";
 
             try
             {
@@ -321,7 +324,11 @@ namespace Курсовой_проект
             textBox4.Text = "";
             textBox7.Text = "";
             textBox8.Text = "";
+            textBox9.Text = "";
             pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            pictureBox1.ImageLocation = @"foto\NULL2.jpg";
+            pictureBox2.ImageLocation = @"foto\NULL2.5.jpg";
 
             try
             {
