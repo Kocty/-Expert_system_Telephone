@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using System.Data.OleDb;//библиотека для работы с запросами для бд
 using System.Text.RegularExpressions;//библиотека для регулярных выражений
+using MessagingToolkit.QRCode.Codec;//dll скачал из инета для создания qr-кодов
+using MessagingToolkit.QRCode.Codec.Data;//https://vscode.ru/prog-lessons/qr-kod-na-c-sharp.html
 using System.Drawing;
 
 namespace Курсовой_проект
@@ -35,6 +37,7 @@ namespace Курсовой_проект
             textBox7.Text = "";
             textBox8.Text = "";
             pictureBox1.Image = null;
+            pictureBox2.Image = null;
 
             try
             {
@@ -149,7 +152,7 @@ namespace Курсовой_проект
                 {
                     while (reader.Read())//запись значений в столбцы таблицы    
                     {
-                        dataGridView1.Rows.Add(reader["NamePhone"], reader["Brand"], reader["ScreenDiagonal"], reader["Memory"], reader["ScreenType"], reader["Price"], reader["Color"]);
+                        dataGridView1.Rows.Add(reader["NamePhone"], reader["Brand"], reader["ScreenDiagonal"], reader["Memory"], reader["ScreenType"], reader["Price"], reader["Color"], reader["Link"]);
                     }
                 }
                 this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
@@ -230,39 +233,39 @@ namespace Курсовой_проект
             myConnection.Close();//при закрытии формы закрывает соединение с БД
             new Menu().Show();  
         }
-        private void button3_Click(object sender, EventArgs e)//очистка всех полей
-        {
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-            radioButton4.Checked = false;
-            radioButton5.Checked = false;
-            radioButton6.Checked = false;
-            radioButton7.Checked = false;
-            radioButton8.Checked = false;
-            radioButton9.Checked = false;
-            radioButton10.Checked = false;
-            radioButton11.Checked = false;
-            radioButton12.Checked = false;
-            radioButton13.Checked = false;
-            radioButton14.Checked = false;
-            radioButton15.Checked = false;
-            radioButton16.Checked = false;
-            radioButton17.Checked = false;
-            radioButton18.Checked = false;
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox7.Text = "";
-            textBox8.Text = "";
-            trackBar1.Value = 5000;
-            trackBar2.Value = 10000;
-            textBox5.Text = "5000";
-            textBox6.Text = "10000";
-            dataGridView1.Rows.Clear();
-            pictureBox1.Image = null; 
-        }
+        //private void button3_Click(object sender, EventArgs e)//кнопка очистка всех полей
+        //{
+        //    radioButton1.Checked = false;
+        //    radioButton2.Checked = false;
+        //    radioButton3.Checked = false;
+        //    radioButton4.Checked = false;
+        //    radioButton5.Checked = false;
+        //    radioButton6.Checked = false;
+        //    radioButton7.Checked = false;
+        //    radioButton8.Checked = false;
+        //    radioButton9.Checked = false;
+        //    radioButton10.Checked = false;
+        //    radioButton11.Checked = false;
+        //    radioButton12.Checked = false;
+        //    radioButton13.Checked = false;
+        //    radioButton14.Checked = false;
+        //    radioButton15.Checked = false;
+        //    radioButton16.Checked = false;
+        //    radioButton17.Checked = false;
+        //    radioButton18.Checked = false;
+        //    textBox1.Text = "";
+        //    textBox2.Text = "";
+        //    textBox3.Text = "";
+        //    textBox4.Text = "";
+        //    textBox7.Text = "";
+        //    textBox8.Text = "";
+        //    trackBar1.Value = 5000;
+        //    trackBar2.Value = 10000;
+        //    textBox5.Text = "5000";
+        //    textBox6.Text = "10000";
+        //    dataGridView1.Rows.Clear();
+        //    pictureBox1.Image = null; 
+        //}
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)/*проверка на наличие записи при нажатии на строку в таблице, если отсутствует то выводит сообщение об этом*/
         {
             try
@@ -276,14 +279,25 @@ namespace Курсовой_проект
                     textBox7.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                     textBox8.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString() + " ₽";// добавляем в конце строки знак рубля(правый alt + 8)
                     textBox9.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+
                     pictureBox1.ImageLocation = @"foto\NULL2.jpg";
-                    
                     if (pictureBox1.ImageLocation != null)
                     {
                         pictureBox1.ImageLocation = @"foto\" + textBox1.Text + ".png";
+                    };
+                    if (pictureBox2.ImageLocation != null)
+                    {
+                        string qrtext = dataGridView1.CurrentRow.Cells[7].Value.ToString(); ; //считываем текст из TextBox'a
+                        QRCodeEncoder encoder = new QRCodeEncoder(); //создаем объект класса QRCodeEncoder
+                        Bitmap qrcode = encoder.Encode(qrtext); // кодируем слово, полученное из TextBox'a (qrtext) в переменную qrcode. класса Bitmap(класс, который используется для работы с изображениями)
+                        pictureBox2.Image = qrcode as Image; // pictureBox выводит qrcode как изображение.
+
+                        if(qrtext.Length == 0)
+                        {
+                            pictureBox2.ImageLocation = @"foto\NULL2.5.jpg";
+                        }
                     }
                 }
-                
             }
             catch
             {
@@ -295,7 +309,7 @@ namespace Курсовой_проект
             MessageBox.Show("Для прохождения теста выбирайте по одному варианту ответа на вопрос, после выбора всех ответов нажмите кнопку 'ПОДОБРАТЬ Телефон' подходящие телефоны появятся в табличке в правом верхнем углу, вы можете нажимать на подходящие варианты и получать информацию в полях под таблицей. ", "Как проходить тест", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)//только этот бренд
         {
             string query = null;//объявление переменой запроса
             string brand = null;//объявление переменных для запроса
@@ -356,7 +370,7 @@ namespace Курсовой_проект
                         {
                             while (reader.Read())//запись значений в столбцы таблицы    
                             {
-                                dataGridView1.Rows.Add(reader["NamePhone"], reader["Brand"], reader["ScreenDiagonal"], reader["Memory"], reader["ScreenType"], reader["Price"], reader["Color"]);
+                                dataGridView1.Rows.Add(reader["NamePhone"], reader["Brand"], reader["ScreenDiagonal"], reader["Memory"], reader["ScreenType"], reader["Price"], reader["Color"], reader["Link"]);
                             }
                         }
                         this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
@@ -368,5 +382,17 @@ namespace Курсовой_проект
                 MessageBox.Show("Выберите вариант бренда", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = true;
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = false;
+        }
+        
     }
 }

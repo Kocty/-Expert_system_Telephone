@@ -34,7 +34,8 @@ namespace Курсовой_проект
             string Memory = comboBox3.Text;
             string ScreenType = comboBox4.Text;
             string Color = textBox3.Text;
-            
+            string Link = textBox7.Text;
+
             try
             {
                 int Price = Convert.ToInt32(textBox2.Text);
@@ -45,7 +46,7 @@ namespace Курсовой_проект
                 else //запрос на добавление данных
                 {
                     
-                    query = "INSERT INTO phones (NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price, Color) VALUES ('" + NamePhone + "','" + Brand + "','" + Diagonal + "','" + Memory + "','" + ScreenType + "','" + Price.ToString() + "' ,'" + Color + "')";//
+                    query = "INSERT INTO phones (NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price, Color, Link) VALUES ('" + NamePhone + "','" + Brand + "','" + Diagonal + "','" + Memory + "','" + ScreenType + "','" + Price.ToString() + "' ,'" + Color + "','"+ Link + "')";
                     OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
                     command.ExecuteNonQuery();//возвращение затронутых строк
                     pictureBox1.Image.Save(@"foto\" + textBox1.Text + ".png", ImageFormat.Png);//сохранение фото
@@ -59,6 +60,7 @@ namespace Курсовой_проект
             }
             textBox1.Text = "";//очистка полей ввода после выполнения запроса
             textBox2.Text = "";
+            textBox7.Text = "";
             pictureBox1.Image = null;
             pictureBox1.Visible = false;
             pictureBox2.Visible = true;
