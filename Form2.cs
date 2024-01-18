@@ -290,9 +290,9 @@ namespace Курсовой_проект
                     };
                     if (pictureBox2.ImageLocation != null)
                     {
-                        string qrtext = dataGridView1.CurrentRow.Cells[7].Value.ToString(); ; //считываем текст из TextBox'a
+                        string qrtext = dataGridView1.CurrentRow.Cells[7].Value.ToString(); ; //считываем текст из запроса
                         QRCodeEncoder encoder = new QRCodeEncoder(); //создаем объект класса QRCodeEncoder
-                        Bitmap qrcode = encoder.Encode(qrtext); // кодируем слово, полученное из TextBox'a (qrtext) в переменную qrcode. класса Bitmap(класс, который используется для работы с изображениями)
+                        Bitmap qrcode = encoder.Encode(qrtext); // кодируем слово, в переменную qrcode. класса Bitmap(класс, который используется для работы с изображениями)
                         pictureBox2.Image = qrcode as Image; // pictureBox выводит qrcode как изображение.
 
                         if(qrtext.Length == 0)

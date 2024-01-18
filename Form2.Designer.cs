@@ -123,7 +123,7 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(12, 584);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 100);
+            this.button1.Size = new System.Drawing.Size(146, 100);
             this.button1.TabIndex = 0;
             this.button1.Text = "НАЗАД";
             this.button1.UseVisualStyleBackColor = true;
@@ -142,9 +142,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(354, 584);
+            this.button2.Location = new System.Drawing.Point(373, 584);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(203, 100);
+            this.button2.Size = new System.Drawing.Size(184, 100);
             this.button2.TabIndex = 3;
             this.button2.Text = "ПОДОБРАТЬ ТЕЛЕФОН";
             this.button2.UseVisualStyleBackColor = true;
@@ -324,7 +324,7 @@
             // 
             this.radioButton17.AutoSize = true;
             this.radioButton17.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton17.Location = new System.Drawing.Point(492, 55);
+            this.radioButton17.Location = new System.Drawing.Point(485, 55);
             this.radioButton17.Name = "radioButton17";
             this.radioButton17.Size = new System.Drawing.Size(93, 35);
             this.radioButton17.TabIndex = 17;
@@ -567,6 +567,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NamePhone,
             this.Brand,
@@ -580,21 +581,20 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(538, 220);
+            this.dataGridView1.Size = new System.Drawing.Size(258, 220);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             // 
             // NamePhone
             // 
-            this.NamePhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NamePhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NamePhone.DefaultCellStyle = dataGridViewCellStyle1;
             this.NamePhone.FillWeight = 110F;
-            this.NamePhone.HeaderText = "NamePhone";
+            this.NamePhone.HeaderText = " ТЕЛЕФОН";
             this.NamePhone.MinimumWidth = 15;
             this.NamePhone.Name = "NamePhone";
             this.NamePhone.ReadOnly = true;
-            this.NamePhone.Width = 89;
             // 
             // Brand
             // 
@@ -604,7 +604,7 @@
             this.Brand.HeaderText = "Brand";
             this.Brand.Name = "Brand";
             this.Brand.ReadOnly = true;
-            this.Brand.Width = 59;
+            this.Brand.Visible = false;
             // 
             // ScreenDiagonal
             // 
@@ -615,7 +615,7 @@
             this.ScreenDiagonal.HeaderText = "ScreenDiagonal";
             this.ScreenDiagonal.Name = "ScreenDiagonal";
             this.ScreenDiagonal.ReadOnly = true;
-            this.ScreenDiagonal.Width = 103;
+            this.ScreenDiagonal.Visible = false;
             // 
             // Memory
             // 
@@ -625,7 +625,7 @@
             this.Memory.HeaderText = "Memory";
             this.Memory.Name = "Memory";
             this.Memory.ReadOnly = true;
-            this.Memory.Width = 72;
+            this.Memory.Visible = false;
             // 
             // ScreenType
             // 
@@ -635,7 +635,7 @@
             this.ScreenType.HeaderText = "ScreenType";
             this.ScreenType.Name = "ScreenType";
             this.ScreenType.ReadOnly = true;
-            this.ScreenType.Width = 86;
+            this.ScreenType.Visible = false;
             // 
             // PriceMin
             // 
@@ -647,7 +647,7 @@
             this.PriceMin.HeaderText = "Price";
             this.PriceMin.Name = "PriceMin";
             this.PriceMin.ReadOnly = true;
-            this.PriceMin.Width = 56;
+            this.PriceMin.Visible = false;
             // 
             // Color
             // 
@@ -658,7 +658,6 @@
             this.Color.Name = "Color";
             this.Color.ReadOnly = true;
             this.Color.Visible = false;
-            this.Color.Width = 56;
             // 
             // Link
             // 
@@ -669,12 +668,11 @@
             this.Link.Name = "Link";
             this.Link.ReadOnly = true;
             this.Link.Visible = false;
-            this.Link.Width = 52;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(145, 584);
+            this.button4.Location = new System.Drawing.Point(164, 583);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(203, 100);
             this.button4.TabIndex = 22;
@@ -763,9 +761,9 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox1.ErrorImage = global::Курсовой_проект.Properties.Resources.NULL2;
             this.pictureBox1.ImageLocation = "foto\\NULL2.jpg";
-            this.pictureBox1.Location = new System.Drawing.Point(1068, 239);
+            this.pictureBox1.Location = new System.Drawing.Point(1068, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(276, 445);
+            this.pictureBox1.Size = new System.Drawing.Size(370, 671);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
@@ -807,9 +805,9 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox2.ErrorImage = global::Курсовой_проект.Properties.Resources.NULL2;
             this.pictureBox2.ImageLocation = "foto\\NULL2.5.jpg";
-            this.pictureBox2.Location = new System.Drawing.Point(1068, 239);
+            this.pictureBox2.Location = new System.Drawing.Point(1068, 13);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(276, 445);
+            this.pictureBox2.Size = new System.Drawing.Size(370, 671);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
@@ -844,7 +842,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1349, 691);
+            this.ClientSize = new System.Drawing.Size(1450, 691);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox9);
@@ -858,7 +857,6 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox2);
