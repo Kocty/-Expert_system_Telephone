@@ -45,21 +45,28 @@ namespace Курсовой_проект
                 }
                 else //запрос на добавление данных
                 {
-                    
-                    query = "INSERT INTO phones (NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price, Color, Link) VALUES ('" + NamePhone + "','" + Brand + "','" + Diagonal + "','" + Memory + "','" + ScreenType + "','" + Price.ToString() + "' ,'" + Color + "','"+ Link + "')";
-                    OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
-                    command.ExecuteNonQuery();//возвращение затронутых строк
-                    pictureBox1.Image.Save(@"foto\" + textBox1.Text + ".png", ImageFormat.Png);//сохранение фото
-                    MessageBox.Show("Телефон добавлен ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+                    if(pictureBox1.Image != null)
+                    {
+                        query = "INSERT INTO phones (NamePhone, Brand, ScreenDiagonal, Memory, ScreenType, Price, Color, Link) VALUES ('" + NamePhone + "','" + Brand + "','" + Diagonal + "','" + Memory + "','" + ScreenType + "','" + Price.ToString() + "' ,'" + Color + "','" + Link + "')";
+                        OleDbCommand command = new OleDbCommand(query, myConnection);//выполнение запроса
+                        command.ExecuteNonQuery();//возвращение затронутых строк
+                        pictureBox1.Image.Save(@"foto\" + textBox1.Text + ".png", ImageFormat.Png);//сохранение фото
+                        MessageBox.Show("Телефон добавлен ", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Проверьте выбор изображения ", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch
             {
-                MessageBox.Show("Проверьте выбор изображения и  заполнение всех полей ввода или такой автомобиль уже существует в базе данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Проверьте выбор изображения и заполнение всех полей ввода", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             textBox1.Text = "";//очистка полей ввода после выполнения запроса
             textBox2.Text = "";
+            textBox3.Text = "";
             textBox7.Text = "";
             pictureBox1.Image = null;
             pictureBox1.Visible = false;
@@ -179,11 +186,7 @@ namespace Курсовой_проект
         private void button3_Click(object sender, EventArgs e)
         {
             this.phonesTableAdapter.Fill(this.telephoneDataSet.phones);//обновление таблицы
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            textBox1.MaxLength = 50;//максимальная длина числа в поле
-        }
+        } 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList; // выпадающий список с выбором операций
@@ -200,6 +203,10 @@ namespace Курсовой_проект
         {
             comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.MaxLength = 50;//максимальная длина числа в поле
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             textBox2.MaxLength = 6;//максимальная длина числа в поле
@@ -215,6 +222,10 @@ namespace Курсовой_проект
             {
                 textBox2.Text = rx.Replace(textBox2.Text, "");
             }
+        }
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            textBox3.MaxLength = 50;
         }
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
@@ -242,14 +253,16 @@ namespace Курсовой_проект
                 textBox6.Text = rx.Replace(textBox6.Text, "");
             }
         }
-
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            textBox7.MaxLength = 100;
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
             pictureBox1.Visible = false;
             pictureBox2.Visible = true;
         }
-
         private void pictureBox2_Click(object sender, EventArgs e)//при нажатии
         {
             pictureBox1.Visible = true;//отображает pictureBox1 который находится под pictureBox2

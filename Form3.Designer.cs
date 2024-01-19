@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,8 +121,8 @@
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle43;
             this.dataGridViewTextBoxColumn1.FillWeight = 121.8274F;
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -130,8 +130,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "NameAvto";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle44;
             this.dataGridViewTextBoxColumn2.FillWeight = 95.63452F;
             this.dataGridViewTextBoxColumn2.HeaderText = "NameAvto";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -139,8 +139,8 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Brand";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle45;
             this.dataGridViewTextBoxColumn3.FillWeight = 95.63452F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Brand";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -148,10 +148,10 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "PriceMin";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle46.Format = "C2";
+            dataGridViewCellStyle46.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle46;
             this.dataGridViewTextBoxColumn4.FillWeight = 95.63452F;
             this.dataGridViewTextBoxColumn4.HeaderText = "PriceMin";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -159,10 +159,10 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "PriceMax";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle47.Format = "C2";
+            dataGridViewCellStyle47.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle47;
             this.dataGridViewTextBoxColumn5.FillWeight = 95.63452F;
             this.dataGridViewTextBoxColumn5.HeaderText = "PriceMax";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -276,7 +276,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(1263, 38);
+            this.button5.Location = new System.Drawing.Point(1353, 37);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(240, 39);
             this.button5.TabIndex = 25;
@@ -287,7 +287,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(1135, 38);
+            this.textBox5.Location = new System.Drawing.Point(1225, 38);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(122, 39);
             this.textBox5.TabIndex = 26;
@@ -297,7 +297,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(1129, 4);
+            this.label4.Location = new System.Drawing.Point(1213, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(380, 31);
             this.label4.TabIndex = 27;
@@ -307,7 +307,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(1129, 80);
+            this.label5.Location = new System.Drawing.Point(1337, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(256, 31);
             this.label5.TabIndex = 29;
@@ -316,7 +316,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(1135, 114);
+            this.textBox6.Location = new System.Drawing.Point(1225, 113);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(368, 39);
             this.textBox6.TabIndex = 28;
@@ -399,8 +399,8 @@
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle48;
             this.dataGridViewTextBoxColumn6.HeaderText = "Id";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -410,8 +410,8 @@
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "NamePhone";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle49;
             this.dataGridViewTextBoxColumn7.HeaderText = "NamePhone";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -421,8 +421,8 @@
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Brand";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle50;
             this.dataGridViewTextBoxColumn8.HeaderText = "Brand";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -432,8 +432,8 @@
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn9.DataPropertyName = "ScreenDiagonal";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle51;
             this.dataGridViewTextBoxColumn9.HeaderText = "ScreenDiagonal";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -443,8 +443,8 @@
             // 
             this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Memory";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle52.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle52;
             this.dataGridViewTextBoxColumn10.HeaderText = "Memory";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
@@ -454,8 +454,8 @@
             // 
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn11.DataPropertyName = "ScreenType";
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle53.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle53;
             this.dataGridViewTextBoxColumn11.HeaderText = "ScreenType";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
@@ -465,10 +465,10 @@
             // 
             this.dataGridViewTextBoxColumn22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn22.DataPropertyName = "Price";
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            dataGridViewCellStyle12.Format = "C0";
-            dataGridViewCellStyle12.NullValue = null;
-            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            dataGridViewCellStyle54.Format = "C0";
+            dataGridViewCellStyle54.NullValue = null;
+            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle54;
             this.dataGridViewTextBoxColumn22.HeaderText = "Price";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
@@ -478,8 +478,8 @@
             // 
             this.Color.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Color.DataPropertyName = "Color";
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Color.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Color.DefaultCellStyle = dataGridViewCellStyle55;
             this.Color.HeaderText = "Color";
             this.Color.Name = "Color";
             this.Color.ReadOnly = true;
@@ -489,8 +489,8 @@
             // 
             this.link.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.link.DataPropertyName = "link";
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.link.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.link.DefaultCellStyle = dataGridViewCellStyle56;
             this.link.HeaderText = "link";
             this.link.Name = "link";
             this.link.ReadOnly = true;
@@ -599,7 +599,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(1304, 213);
+            this.pictureBox1.Location = new System.Drawing.Point(1304, 197);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(289, 466);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -625,7 +625,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(1133, 159);
+            this.checkBox1.Location = new System.Drawing.Point(1291, 156);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(302, 35);
             this.checkBox1.TabIndex = 40;
@@ -640,6 +640,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(539, 39);
             this.textBox3.TabIndex = 41;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label9
             // 
@@ -669,13 +670,14 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(539, 39);
             this.textBox7.TabIndex = 43;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1594, 681);
+            this.ClientSize = new System.Drawing.Size(1599, 681);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label9);

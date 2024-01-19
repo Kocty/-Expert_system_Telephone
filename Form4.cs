@@ -30,32 +30,26 @@ namespace Курсовой_проект
             }
             
         }
-
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
         {
             new Menu().Show();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            textBox1.MaxLength = 30;
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            textBox2.MaxLength = 30;
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
