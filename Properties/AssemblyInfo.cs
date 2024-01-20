@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("Курсовой проект")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Дипломный проект")]
+[assembly: AssemblyDescription("Экспертная система для выбора телефона")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Курсовой проект")]
+[assembly: AssemblyCompany("Кузнецов К.О По-418")]
+[assembly: AssemblyProduct("Дипломный проект")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
